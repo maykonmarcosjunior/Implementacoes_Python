@@ -1,0 +1,391 @@
+[
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "partial",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "AgendaDAO",
+        "importPath": "AgendaDAO",
+        "description": "AgendaDAO",
+        "isExtraImport": true,
+        "detail": "AgendaDAO",
+        "documentation": {}
+    },
+    {
+        "label": "DAO",
+        "importPath": "DAO",
+        "description": "DAO",
+        "isExtraImport": true,
+        "detail": "DAO",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "App",
+        "importPath": "Agenda",
+        "description": "Agenda",
+        "isExtraImport": true,
+        "detail": "Agenda",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "PySimpleGUI",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "PySimpleGUI",
+        "description": "PySimpleGUI",
+        "detail": "PySimpleGUI",
+        "documentation": {}
+    },
+    {
+        "label": "App",
+        "kind": 6,
+        "importPath": "Agenda_Inteligente.Agenda",
+        "description": "Agenda_Inteligente.Agenda",
+        "peekOfCode": "class App:\n    def __init__(self, toplevel):\n        self.mensal = ['', \"Janeiro\", \"Fevereiro\", \"Março\",\n                       \"Abril\", \"Maio\", \"Junho\", \"Julho\",\n                       \"Agosto\", \"Setembro\", \"Outubro\",\n                       \"Novembro\", \"Dezembro\"]\n        self.ano = ['']*13\n        self.display = ['']*13\n        self.nome_meses = ['']*13\n        self.dias_meses = [",
+        "detail": "Agenda_Inteligente.Agenda",
+        "documentation": {}
+    },
+    {
+        "label": "AgendaDAO",
+        "kind": 6,
+        "importPath": "Agenda_Inteligente.AgendaDAO",
+        "description": "Agenda_Inteligente.AgendaDAO",
+        "peekOfCode": "class AgendaDAO(DAO):\n    def __init__(self):\n        super().__init__('agenda.pkl')\n        self.diario = [\"Dia 01\\n\", \"Dia 02\\n\", \"Dia 03\\n\",\n                       \"Dia 04\\n\", \"Dia 05\\n\", \"Dia 06\\n\",\n                       \"Dia 07\\n\", \"Dia 08\\n\", \"Dia 09\\n\",\n                       \"Dia 10\\n\", \"Dia 11\\n\", \"Dia 12\\n\",\n                       \"Dia 13\\n\", \"Dia 14\\n\", \"Dia 15\\n\",\n                       \"Dia 16\\n\", \"Dia 17\\n\", \"Dia 18\\n\",\n                       \"Dia 19\\n\", \"Dia 20\\n\", \"Dia 21\\n\",",
+        "detail": "Agenda_Inteligente.AgendaDAO",
+        "documentation": {}
+    },
+    {
+        "label": "DAO",
+        "kind": 6,
+        "importPath": "Agenda_Inteligente.DAO",
+        "description": "Agenda_Inteligente.DAO",
+        "peekOfCode": "class DAO(ABC):\n    def __init__(self, datasource=''):\n        self.__datasource = datasource\n        self.__cache = {}\n        try:\n            self.__load()\n        except FileNotFoundError:\n            self.__dump()\n    def __dump(self):\n        pickle.dump(self.__cache,",
+        "detail": "Agenda_Inteligente.DAO",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 5,
+        "importPath": "Agenda_Inteligente.main",
+        "description": "Agenda_Inteligente.main",
+        "peekOfCode": "root = tk.Tk()\nApp(root)\nroot.attributes('-fullscreen', True)\nroot.mainloop()\n# prova Matemática_Discreta 28/06 10:10\n# trabalho Programação_Orientada_a_Objetos 11/07 13:30",
+        "detail": "Agenda_Inteligente.main",
+        "documentation": {}
+    },
+    {
+        "label": "fibonacci",
+        "kind": 2,
+        "importPath": "Isolados.Euclides",
+        "description": "Isolados.Euclides",
+        "peekOfCode": "def fibonacci(n):\n    raiz_de_5 = 5**(0.5)\n    u = 1/raiz_de_5\n    x1 = (1 + raiz_de_5)/2\n    x2 = (1 - raiz_de_5)/2\n    x1 = x1**n\n    x2 = x2**n\n    v = x1 - x2\n    u = u*v\n    return int(u)",
+        "detail": "Isolados.Euclides",
+        "documentation": {}
+    },
+    {
+        "label": "euclides",
+        "kind": 2,
+        "importPath": "Isolados.Euclides",
+        "description": "Isolados.Euclides",
+        "peekOfCode": "def euclides(a, b):\n    while b != 0:\n        a, b = b, a%b\n    return a\ndef euclides_estendido(a, b):\n    if b == 0:\n        return a, 0, 1\n    else:\n        mdc, x, y = euclides_estendido(b, a%b)\n        return mdc, y-(a//b)*x, x",
+        "detail": "Isolados.Euclides",
+        "documentation": {}
+    },
+    {
+        "label": "euclides_estendido",
+        "kind": 2,
+        "importPath": "Isolados.Euclides",
+        "description": "Isolados.Euclides",
+        "peekOfCode": "def euclides_estendido(a, b):\n    if b == 0:\n        return a, 0, 1\n    else:\n        mdc, x, y = euclides_estendido(b, a%b)\n        return mdc, y-(a//b)*x, x",
+        "detail": "Isolados.Euclides",
+        "documentation": {}
+    },
+    {
+        "label": "cd",
+        "kind": 5,
+        "importPath": "Isolados.cifra_de_cesar",
+        "description": "Isolados.cifra_de_cesar",
+        "peekOfCode": "cd = int(input())\nabcm = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\", \"a\", \"b\", \"c\"]\nabcd = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"]\nwhile True:\n    try:\n        m = input()\n        m = m.lower()\n        m = list(m)\n        for i in range(0, len(m)):\n            if cd == 0:",
+        "detail": "Isolados.cifra_de_cesar",
+        "documentation": {}
+    },
+    {
+        "label": "abcm",
+        "kind": 5,
+        "importPath": "Isolados.cifra_de_cesar",
+        "description": "Isolados.cifra_de_cesar",
+        "peekOfCode": "abcm = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\", \"a\", \"b\", \"c\"]\nabcd = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"]\nwhile True:\n    try:\n        m = input()\n        m = m.lower()\n        m = list(m)\n        for i in range(0, len(m)):\n            if cd == 0:\n                l = abcm.index(m[i])",
+        "detail": "Isolados.cifra_de_cesar",
+        "documentation": {}
+    },
+    {
+        "label": "abcd",
+        "kind": 5,
+        "importPath": "Isolados.cifra_de_cesar",
+        "description": "Isolados.cifra_de_cesar",
+        "peekOfCode": "abcd = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"]\nwhile True:\n    try:\n        m = input()\n        m = m.lower()\n        m = list(m)\n        for i in range(0, len(m)):\n            if cd == 0:\n                l = abcm.index(m[i])\n                m[i] = abcm[l+3]",
+        "detail": "Isolados.cifra_de_cesar",
+        "documentation": {}
+    },
+    {
+        "label": "App",
+        "kind": 6,
+        "importPath": "Isolados.exemplo_JSON",
+        "description": "Isolados.exemplo_JSON",
+        "peekOfCode": "class App:\n    def __init__(self, dados):\n        self.__dados = IParse(dados)\nclass IParse:\n    def __init__(self, dados):\n        self.__dados = dados\n    def parse(self, arq:dict):\n        return arq\nclass JSONParser(IParse):\n    def __init__(self, url:str):",
+        "detail": "Isolados.exemplo_JSON",
+        "documentation": {}
+    },
+    {
+        "label": "IParse",
+        "kind": 6,
+        "importPath": "Isolados.exemplo_JSON",
+        "description": "Isolados.exemplo_JSON",
+        "peekOfCode": "class IParse:\n    def __init__(self, dados):\n        self.__dados = dados\n    def parse(self, arq:dict):\n        return arq\nclass JSONParser(IParse):\n    def __init__(self, url:str):\n        self.__arq = json.loads(json.dumps(url))\n    def parse(self):\n        super().parse(self.__arq)",
+        "detail": "Isolados.exemplo_JSON",
+        "documentation": {}
+    },
+    {
+        "label": "JSONParser",
+        "kind": 6,
+        "importPath": "Isolados.exemplo_JSON",
+        "description": "Isolados.exemplo_JSON",
+        "peekOfCode": "class JSONParser(IParse):\n    def __init__(self, url:str):\n        self.__arq = json.loads(json.dumps(url))\n    def parse(self):\n        super().parse(self.__arq)\nclass CSVParser(IParse):\n    def __init__(self, arq):\n        self.__arq = arq\n    def parse(self):\n        a = CSVAdapter(list(self.__arq))",
+        "detail": "Isolados.exemplo_JSON",
+        "documentation": {}
+    },
+    {
+        "label": "CSVParser",
+        "kind": 6,
+        "importPath": "Isolados.exemplo_JSON",
+        "description": "Isolados.exemplo_JSON",
+        "peekOfCode": "class CSVParser(IParse):\n    def __init__(self, arq):\n        self.__arq = arq\n    def parse(self):\n        a = CSVAdapter(list(self.__arq))\n        super().parse(a.parse())\nclass CSVAdapter(CSVParser):\n    def __init__(self, lista):\n        L = len(lista)\n        self.__r = {}",
+        "detail": "Isolados.exemplo_JSON",
+        "documentation": {}
+    },
+    {
+        "label": "CSVAdapter",
+        "kind": 6,
+        "importPath": "Isolados.exemplo_JSON",
+        "description": "Isolados.exemplo_JSON",
+        "peekOfCode": "class CSVAdapter(CSVParser):\n    def __init__(self, lista):\n        L = len(lista)\n        self.__r = {}\n        for i in range(0, L, 2):\n            self.__r[lista[i]] = lista[i+1]\n    def parse(self, arq):\n        return self.__r",
+        "detail": "Isolados.exemplo_JSON",
+        "documentation": {}
+    },
+    {
+        "label": "produbool",
+        "kind": 2,
+        "importPath": "Isolados.produto_de_matrizes",
+        "description": "Isolados.produto_de_matrizes",
+        "peekOfCode": "def produbool(a, b, c, d):\n    resultado = False\n    for i in range(len(a[b])):\n        m1 = True\n        m2 = True\n        if a[b][i] == 0:\n            m1 = False\n        if c[d][i] == 0:\n            m2= False\n        resultado = resultado or (m1 and m2)",
+        "detail": "Isolados.produto_de_matrizes",
+        "documentation": {}
+    },
+    {
+        "label": "produlc",
+        "kind": 2,
+        "importPath": "Isolados.produto_de_matrizes",
+        "description": "Isolados.produto_de_matrizes",
+        "peekOfCode": "def produlc(a, b, c, d):\n    resultado = 0\n    for i in range(len(a[b])):\n        resultado += a[b][i] * c[d][i]\n    return resultado\noperacao = input()\nn = int(input())\nmat1 = [None]*n\nfor i in range(n):\n    mat1[i] = input().split()",
+        "detail": "Isolados.produto_de_matrizes",
+        "documentation": {}
+    },
+    {
+        "label": "operacao",
+        "kind": 5,
+        "importPath": "Isolados.produto_de_matrizes",
+        "description": "Isolados.produto_de_matrizes",
+        "peekOfCode": "operacao = input()\nn = int(input())\nmat1 = [None]*n\nfor i in range(n):\n    mat1[i] = input().split()\n    for j in range(len(mat1[i])):\n        mat1[i][j] = int(mat1[i][j])\nm = int(input())\nmat2 = [None]*m\nfor i in range(m):",
+        "detail": "Isolados.produto_de_matrizes",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "Isolados.produto_de_matrizes",
+        "description": "Isolados.produto_de_matrizes",
+        "peekOfCode": "n = int(input())\nmat1 = [None]*n\nfor i in range(n):\n    mat1[i] = input().split()\n    for j in range(len(mat1[i])):\n        mat1[i][j] = int(mat1[i][j])\nm = int(input())\nmat2 = [None]*m\nfor i in range(m):\n    mat2[i] = [None]*m",
+        "detail": "Isolados.produto_de_matrizes",
+        "documentation": {}
+    },
+    {
+        "label": "mat1",
+        "kind": 5,
+        "importPath": "Isolados.produto_de_matrizes",
+        "description": "Isolados.produto_de_matrizes",
+        "peekOfCode": "mat1 = [None]*n\nfor i in range(n):\n    mat1[i] = input().split()\n    for j in range(len(mat1[i])):\n        mat1[i][j] = int(mat1[i][j])\nm = int(input())\nmat2 = [None]*m\nfor i in range(m):\n    mat2[i] = [None]*m\nfor i in range(m):",
+        "detail": "Isolados.produto_de_matrizes",
+        "documentation": {}
+    },
+    {
+        "label": "m",
+        "kind": 5,
+        "importPath": "Isolados.produto_de_matrizes",
+        "description": "Isolados.produto_de_matrizes",
+        "peekOfCode": "m = int(input())\nmat2 = [None]*m\nfor i in range(m):\n    mat2[i] = [None]*m\nfor i in range(m):\n    v = input().split()\n    for j in range(m):\n        mat2[j][i] = int(v[j])\nfor g in range(n):\n    for h in range(n):",
+        "detail": "Isolados.produto_de_matrizes",
+        "documentation": {}
+    },
+    {
+        "label": "mat2",
+        "kind": 5,
+        "importPath": "Isolados.produto_de_matrizes",
+        "description": "Isolados.produto_de_matrizes",
+        "peekOfCode": "mat2 = [None]*m\nfor i in range(m):\n    mat2[i] = [None]*m\nfor i in range(m):\n    v = input().split()\n    for j in range(m):\n        mat2[j][i] = int(v[j])\nfor g in range(n):\n    for h in range(n):\n        if operacao == \"bool\":",
+        "detail": "Isolados.produto_de_matrizes",
+        "documentation": {}
+    },
+    {
+        "label": "CalcularIMC",
+        "kind": 2,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "def CalcularIMC(valores):\n    alturaStr = valores('altura').replace('','',\"\").replace(\".\",\"\")\n    peso = float(valores['peso'])\n    altura = float(alturaStr)/100\n    imc = peso / (altura*altura)\n    return round(imc, 2)\nl0 = [sg.Text(\"Qual o seu peso?\"), sg.InputText('', key='peso'), sg.Text('Kg')]\nl1 = [sg.Text(\"Qual a sua altura?\"), sg.InputText('', key= 'altura'), sg.Text('cm')]\nl2 = [sg.Text('Seu IMC é'), sg.Text('', key='imc', size=(6,1))]\nl3 = [sg.Text('', size=(14,1)), sg.Button('Calcular IMC')]",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "arquivo",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "arquivo = open('arq01.txt','w')\narquivo.write(\"Bóson Treinamentos\\n\")\narquivo.write(\"Criando um arquivo de texto com Python\\n\")\narquivo.write(\"Arquivo criado por Fábio dos Reis\\n\")\narquivo.write(\"É isso ai pessoal!\\n\")\narquivo.close()\n# Lendo o arquivo criado:\narquivo = open('arq01.txt','r')\nfor linha in arquivo:\n    linha = linha.rstrip()",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "arquivo",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "arquivo = open('arq01.txt','r')\nfor linha in arquivo:\n    linha = linha.rstrip()\n    print (linha)\narquivo.close()\n'''\nimport PySimpleGUI as sg\ndef CalcularIMC(valores):\n    alturaStr = valores('altura').replace('','',\"\").replace(\".\",\"\")\n    peso = float(valores['peso'])",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "l0",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "l0 = [sg.Text(\"Qual o seu peso?\"), sg.InputText('', key='peso'), sg.Text('Kg')]\nl1 = [sg.Text(\"Qual a sua altura?\"), sg.InputText('', key= 'altura'), sg.Text('cm')]\nl2 = [sg.Text('Seu IMC é'), sg.Text('', key='imc', size=(6,1))]\nl3 = [sg.Text('', size=(14,1)), sg.Button('Calcular IMC')]\ncontainer = [l0, l1, l2, l3]\njanela = sg.Window('Calculadora de IMC', container, font=('Helvetica', 14))\nrodando = True\nwhile rodando:\n    eventos, valores = window.read()\n    print(valores)",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "l1",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "l1 = [sg.Text(\"Qual a sua altura?\"), sg.InputText('', key= 'altura'), sg.Text('cm')]\nl2 = [sg.Text('Seu IMC é'), sg.Text('', key='imc', size=(6,1))]\nl3 = [sg.Text('', size=(14,1)), sg.Button('Calcular IMC')]\ncontainer = [l0, l1, l2, l3]\njanela = sg.Window('Calculadora de IMC', container, font=('Helvetica', 14))\nrodando = True\nwhile rodando:\n    eventos, valores = window.read()\n    print(valores)\n    if eventos == sg.WIN_CLOSED:",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "l2",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "l2 = [sg.Text('Seu IMC é'), sg.Text('', key='imc', size=(6,1))]\nl3 = [sg.Text('', size=(14,1)), sg.Button('Calcular IMC')]\ncontainer = [l0, l1, l2, l3]\njanela = sg.Window('Calculadora de IMC', container, font=('Helvetica', 14))\nrodando = True\nwhile rodando:\n    eventos, valores = window.read()\n    print(valores)\n    if eventos == sg.WIN_CLOSED:\n        rodando = False",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "l3",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "l3 = [sg.Text('', size=(14,1)), sg.Button('Calcular IMC')]\ncontainer = [l0, l1, l2, l3]\njanela = sg.Window('Calculadora de IMC', container, font=('Helvetica', 14))\nrodando = True\nwhile rodando:\n    eventos, valores = window.read()\n    print(valores)\n    if eventos == sg.WIN_CLOSED:\n        rodando = False\n    elif eventos == 'Calcular IMC':",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "container",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "container = [l0, l1, l2, l3]\njanela = sg.Window('Calculadora de IMC', container, font=('Helvetica', 14))\nrodando = True\nwhile rodando:\n    eventos, valores = window.read()\n    print(valores)\n    if eventos == sg.WIN_CLOSED:\n        rodando = False\n    elif eventos == 'Calcular IMC':\n        imc = CalcularIMC(valores)",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "janela",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "janela = sg.Window('Calculadora de IMC', container, font=('Helvetica', 14))\nrodando = True\nwhile rodando:\n    eventos, valores = window.read()\n    print(valores)\n    if eventos == sg.WIN_CLOSED:\n        rodando = False\n    elif eventos == 'Calcular IMC':\n        imc = CalcularIMC(valores)\n        janela.Element('imc').Update(imc)",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    },
+    {
+        "label": "rodando",
+        "kind": 5,
+        "importPath": "Isolados.teste",
+        "description": "Isolados.teste",
+        "peekOfCode": "rodando = True\nwhile rodando:\n    eventos, valores = window.read()\n    print(valores)\n    if eventos == sg.WIN_CLOSED:\n        rodando = False\n    elif eventos == 'Calcular IMC':\n        imc = CalcularIMC(valores)\n        janela.Element('imc').Update(imc)\njanela.close",
+        "detail": "Isolados.teste",
+        "documentation": {}
+    }
+]
