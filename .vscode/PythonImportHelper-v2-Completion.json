@@ -83,6 +83,49 @@
         "documentation": {}
     },
     {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "gauss",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "gauss",
+        "description": "gauss",
+        "detail": "gauss",
+        "documentation": {}
+    },
+    {
+        "label": "print_file",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "print_file",
+        "description": "print_file",
+        "detail": "print_file",
+        "documentation": {}
+    },
+    {
+        "label": "printar",
+        "importPath": "print_file",
+        "description": "print_file",
+        "isExtraImport": true,
+        "detail": "print_file",
+        "documentation": {}
+    },
+    {
+        "label": "Narquivo",
+        "importPath": "quad_arquivo",
+        "description": "quad_arquivo",
+        "isExtraImport": true,
+        "detail": "quad_arquivo",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
@@ -146,6 +189,339 @@
         "documentation": {}
     },
     {
+        "label": "fxy",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "def fxy(x, y):\n    return -2*x - y\ndef Exato(x):\n    return -3*math.exp(-x) - 2*x + 2\ndef Euler(a, b, h, y0):\n    N = int((b - a)/h)\n    x = [a + i*h for i in range(N)]\n    y = [y0]*N\n    for i in range(N-1):\n        y[i+1] = y[i] + h*fxy(x[i], y[i])",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "Exato",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "def Exato(x):\n    return -3*math.exp(-x) - 2*x + 2\ndef Euler(a, b, h, y0):\n    N = int((b - a)/h)\n    x = [a + i*h for i in range(N)]\n    y = [y0]*N\n    for i in range(N-1):\n        y[i+1] = y[i] + h*fxy(x[i], y[i])\n    return y\ndef Runge_Kutta(a, b, h, y0):",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "Euler",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "def Euler(a, b, h, y0):\n    N = int((b - a)/h)\n    x = [a + i*h for i in range(N)]\n    y = [y0]*N\n    for i in range(N-1):\n        y[i+1] = y[i] + h*fxy(x[i], y[i])\n    return y\ndef Runge_Kutta(a, b, h, y0):\n    N = int((b - a)/h)\n    x = [(a + h*i) for i in range(N)]",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "Runge_Kutta",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "def Runge_Kutta(a, b, h, y0):\n    N = int((b - a)/h)\n    x = [(a + h*i) for i in range(N)]\n    d = [1, 2, 1, 3]\n    K = [0, 0, 0, 0]\n    y = [y0]*N\n    for i in range(N-1):\n        K[0] = h*fxy(x[i], y[i])\n        K[1] = h*fxy(x[i] + h/2, y[i] + K[0]/2)\n        K[2] = h*fxy(x[i] + h/2, y[i] + K[1]/2)",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "N",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "N = int((b - a)/h)\neuler = Euler(a, b, h, y0)\nrunge_kutta = Runge_Kutta(a, b, h, y0)\nexato = [Exato(a + i*h) for i in range(N)]\nerro_rk = [abs(runge_kutta[i] - exato[i]) for i in range(N)]\nerro_eul = [abs(euler[i] - exato[i]) for i in range(N)]\nprint(\"Euler =\", euler, '\\n')\nprint(\"Runge Kuta =\", runge_kutta, '\\n\\n')\nprint(\"exato =\", exato, '\\n')\nprint(\"erro Euler =\", erro_eul, '\\n')",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "euler",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "euler = Euler(a, b, h, y0)\nrunge_kutta = Runge_Kutta(a, b, h, y0)\nexato = [Exato(a + i*h) for i in range(N)]\nerro_rk = [abs(runge_kutta[i] - exato[i]) for i in range(N)]\nerro_eul = [abs(euler[i] - exato[i]) for i in range(N)]\nprint(\"Euler =\", euler, '\\n')\nprint(\"Runge Kuta =\", runge_kutta, '\\n\\n')\nprint(\"exato =\", exato, '\\n')\nprint(\"erro Euler =\", erro_eul, '\\n')\nprint(\"erro R-K =\", erro_rk)",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "runge_kutta",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "runge_kutta = Runge_Kutta(a, b, h, y0)\nexato = [Exato(a + i*h) for i in range(N)]\nerro_rk = [abs(runge_kutta[i] - exato[i]) for i in range(N)]\nerro_eul = [abs(euler[i] - exato[i]) for i in range(N)]\nprint(\"Euler =\", euler, '\\n')\nprint(\"Runge Kuta =\", runge_kutta, '\\n\\n')\nprint(\"exato =\", exato, '\\n')\nprint(\"erro Euler =\", erro_eul, '\\n')\nprint(\"erro R-K =\", erro_rk)",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "exato",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "exato = [Exato(a + i*h) for i in range(N)]\nerro_rk = [abs(runge_kutta[i] - exato[i]) for i in range(N)]\nerro_eul = [abs(euler[i] - exato[i]) for i in range(N)]\nprint(\"Euler =\", euler, '\\n')\nprint(\"Runge Kuta =\", runge_kutta, '\\n\\n')\nprint(\"exato =\", exato, '\\n')\nprint(\"erro Euler =\", erro_eul, '\\n')\nprint(\"erro R-K =\", erro_rk)",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "erro_rk",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "erro_rk = [abs(runge_kutta[i] - exato[i]) for i in range(N)]\nerro_eul = [abs(euler[i] - exato[i]) for i in range(N)]\nprint(\"Euler =\", euler, '\\n')\nprint(\"Runge Kuta =\", runge_kutta, '\\n\\n')\nprint(\"exato =\", exato, '\\n')\nprint(\"erro Euler =\", erro_eul, '\\n')\nprint(\"erro R-K =\", erro_rk)",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "erro_eul",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.EDO",
+        "description": "Calculo_Numerico.EDO",
+        "peekOfCode": "erro_eul = [abs(euler[i] - exato[i]) for i in range(N)]\nprint(\"Euler =\", euler, '\\n')\nprint(\"Runge Kuta =\", runge_kutta, '\\n\\n')\nprint(\"exato =\", exato, '\\n')\nprint(\"erro Euler =\", erro_eul, '\\n')\nprint(\"erro R-K =\", erro_rk)",
+        "detail": "Calculo_Numerico.EDO",
+        "documentation": {}
+    },
+    {
+        "label": "h",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_exponencial",
+        "description": "Calculo_Numerico.ajuste_exponencial",
+        "peekOfCode": "def h(x, k):\n    return x**k\ndef ln(x):\n    return math.log(x)\ndef e(x):\n    return math.exp(x)\ndef ajuste_exp(x, y):\n    n = len(x)\n    A = [[n, 0], [0, 0]]\n    b = [0, 0]",
+        "detail": "Calculo_Numerico.ajuste_exponencial",
+        "documentation": {}
+    },
+    {
+        "label": "ln",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_exponencial",
+        "description": "Calculo_Numerico.ajuste_exponencial",
+        "peekOfCode": "def ln(x):\n    return math.log(x)\ndef e(x):\n    return math.exp(x)\ndef ajuste_exp(x, y):\n    n = len(x)\n    A = [[n, 0], [0, 0]]\n    b = [0, 0]\n    g = [0]*n\n    z = [ln(yy) for yy in y]",
+        "detail": "Calculo_Numerico.ajuste_exponencial",
+        "documentation": {}
+    },
+    {
+        "label": "e",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_exponencial",
+        "description": "Calculo_Numerico.ajuste_exponencial",
+        "peekOfCode": "def e(x):\n    return math.exp(x)\ndef ajuste_exp(x, y):\n    n = len(x)\n    A = [[n, 0], [0, 0]]\n    b = [0, 0]\n    g = [0]*n\n    z = [ln(yy) for yy in y]\n    for i in range(n):\n        A[0][1] += x[i]",
+        "detail": "Calculo_Numerico.ajuste_exponencial",
+        "documentation": {}
+    },
+    {
+        "label": "ajuste_exp",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_exponencial",
+        "description": "Calculo_Numerico.ajuste_exponencial",
+        "peekOfCode": "def ajuste_exp(x, y):\n    n = len(x)\n    A = [[n, 0], [0, 0]]\n    b = [0, 0]\n    g = [0]*n\n    z = [ln(yy) for yy in y]\n    for i in range(n):\n        A[0][1] += x[i]\n        A[1][0] += x[i]\n        b[0] += z[i]",
+        "detail": "Calculo_Numerico.ajuste_exponencial",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_exponencial",
+        "description": "Calculo_Numerico.ajuste_exponencial",
+        "peekOfCode": "x = [0.2, 0.3, 0.4, 0.5,\n     0.6, 0.7, 0.8]\ny = [3.16, 2.38, 1.75, 1.34,\n     1.0, 0.74, 0.56]\ny = [2*e(2*xx) for xx in x]\nA, b, c, erro = ajuste_exp(x, y)\nprintar(A, b, c, erro)",
+        "detail": "Calculo_Numerico.ajuste_exponencial",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_exponencial",
+        "description": "Calculo_Numerico.ajuste_exponencial",
+        "peekOfCode": "y = [3.16, 2.38, 1.75, 1.34,\n     1.0, 0.74, 0.56]\ny = [2*e(2*xx) for xx in x]\nA, b, c, erro = ajuste_exp(x, y)\nprintar(A, b, c, erro)",
+        "detail": "Calculo_Numerico.ajuste_exponencial",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_exponencial",
+        "description": "Calculo_Numerico.ajuste_exponencial",
+        "peekOfCode": "y = [2*e(2*xx) for xx in x]\nA, b, c, erro = ajuste_exp(x, y)\nprintar(A, b, c, erro)",
+        "detail": "Calculo_Numerico.ajuste_exponencial",
+        "documentation": {}
+    },
+    {
+        "label": "h",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "def h(x, k):\n    return x**k\ndef ajuste(x, y, M):\n    n = len(x)\n    A = [0]*(M+1)\n    b = [0]*(M+1)\n    g = [0]*n\n    for i in range(M+1):\n        A[i] = [0]*(M+1)\n        for k in range(n):",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "ajuste",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "def ajuste(x, y, M):\n    n = len(x)\n    A = [0]*(M+1)\n    b = [0]*(M+1)\n    g = [0]*n\n    for i in range(M+1):\n        A[i] = [0]*(M+1)\n        for k in range(n):\n            for j in range(M+1):\n                A[i][j] += h(x[k], i)*h(x[k], j)",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "M",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "M = 1\nx = [1.3, 3.4, 5.1, 6.8, 8]\ny = [2, 5.2, 3.8, 6.1, 5.8]\n'''\nM = 1\nx = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "x = [1.3, 3.4, 5.1, 6.8, 8]\ny = [2, 5.2, 3.8, 6.1, 5.8]\n'''\nM = 1\nx = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,\n    1.582, 1.993,   2.473,  2.503,",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "y = [2, 5.2, 3.8, 6.1, 5.8]\n'''\nM = 1\nx = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,\n    1.582, 1.993,   2.473,  2.503,\n    2.322]",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "M",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "M = 1\nx = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,\n    1.582, 1.993,   2.473,  2.503,\n    2.322]\n'''\nM = 1",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "x = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,\n    1.582, 1.993,   2.473,  2.503,\n    2.322]\n'''\nM = 1\nx = [0, 20, 40, 60, 100]",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "M",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "M = 1\nx = [0, 20, 40, 60, 100]\ny = [81.4, 77, 7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\nprintar(A, b, c, erro)",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "x = [0, 20, 40, 60, 100]\ny = [81.4, 77, 7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\nprintar(A, b, c, erro)",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_polinomial",
+        "description": "Calculo_Numerico.ajuste_polinomial",
+        "peekOfCode": "y = [81.4, 77, 7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\nprintar(A, b, c, erro)",
+        "detail": "Calculo_Numerico.ajuste_polinomial",
+        "documentation": {}
+    },
+    {
+        "label": "h",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_potencia",
+        "description": "Calculo_Numerico.ajuste_potencia",
+        "peekOfCode": "def h(x, k):\n    return x**k\ndef ln(x):\n    return math.log(x)\ndef e(x):\n    return math.exp(x)\ndef ajuste_exp(x, y):\n    n = len(x)\n    A = [[n, 0], [0, 0]]\n    b = [0, 0]",
+        "detail": "Calculo_Numerico.ajuste_potencia",
+        "documentation": {}
+    },
+    {
+        "label": "ln",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_potencia",
+        "description": "Calculo_Numerico.ajuste_potencia",
+        "peekOfCode": "def ln(x):\n    return math.log(x)\ndef e(x):\n    return math.exp(x)\ndef ajuste_exp(x, y):\n    n = len(x)\n    A = [[n, 0], [0, 0]]\n    b = [0, 0]\n    g = [0]*n\n    z = [ln(yy) for yy in y]",
+        "detail": "Calculo_Numerico.ajuste_potencia",
+        "documentation": {}
+    },
+    {
+        "label": "e",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_potencia",
+        "description": "Calculo_Numerico.ajuste_potencia",
+        "peekOfCode": "def e(x):\n    return math.exp(x)\ndef ajuste_exp(x, y):\n    n = len(x)\n    A = [[n, 0], [0, 0]]\n    b = [0, 0]\n    g = [0]*n\n    z = [ln(yy) for yy in y]\n    for i in range(n):\n        A[0][1] += x[i]",
+        "detail": "Calculo_Numerico.ajuste_potencia",
+        "documentation": {}
+    },
+    {
+        "label": "ajuste_exp",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.ajuste_potencia",
+        "description": "Calculo_Numerico.ajuste_potencia",
+        "peekOfCode": "def ajuste_exp(x, y):\n    n = len(x)\n    A = [[n, 0], [0, 0]]\n    b = [0, 0]\n    g = [0]*n\n    z = [ln(yy) for yy in y]\n    for i in range(n):\n        A[0][1] += x[i]\n        A[1][0] += x[i]\n        b[0] += z[i]",
+        "detail": "Calculo_Numerico.ajuste_potencia",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_potencia",
+        "description": "Calculo_Numerico.ajuste_potencia",
+        "peekOfCode": "x = [i for i in range(1, 5)]\ny = [2*(i**2) for i in x]\nA, b, c, erro = ajuste_exp(x, y)\nprintar(A, b, c, erro)",
+        "detail": "Calculo_Numerico.ajuste_potencia",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.ajuste_potencia",
+        "description": "Calculo_Numerico.ajuste_potencia",
+        "peekOfCode": "y = [2*(i**2) for i in x]\nA, b, c, erro = ajuste_exp(x, y)\nprintar(A, b, c, erro)",
+        "detail": "Calculo_Numerico.ajuste_potencia",
+        "documentation": {}
+    },
+    {
+        "label": "birge_vieta",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.birge_vieta",
+        "description": "Calculo_Numerico.birge_vieta",
+        "peekOfCode": "def birge_vieta(a, x0, erro):\n    n = len(a)\n    k = 0\n    b = [a[0]]*n\n    c = [a[0]]*(n-1)\n    while math.fabs(b[n-1]) > erro:\n        k += 1\n        for i in range(1, n-1):\n            b[i] = b[i-1]*x0 + a[i]\n            c[i] = c[i-1]*x0 + b[i]",
+        "detail": "Calculo_Numerico.birge_vieta",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.birge_vieta",
+        "description": "Calculo_Numerico.birge_vieta",
+        "peekOfCode": "a = [1, -9, 27, -31, 12]\nerro = 10**(-8)\nx0 = 6\nk, x0, b = birge_vieta(a, x0, erro)\nprint(k, \"iterações\")\nprint(\"x =\", x0)\nprint(\"r =\", b[-1])",
+        "detail": "Calculo_Numerico.birge_vieta",
+        "documentation": {}
+    },
+    {
+        "label": "erro",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.birge_vieta",
+        "description": "Calculo_Numerico.birge_vieta",
+        "peekOfCode": "erro = 10**(-8)\nx0 = 6\nk, x0, b = birge_vieta(a, x0, erro)\nprint(k, \"iterações\")\nprint(\"x =\", x0)\nprint(\"r =\", b[-1])",
+        "detail": "Calculo_Numerico.birge_vieta",
+        "documentation": {}
+    },
+    {
+        "label": "x0",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.birge_vieta",
+        "description": "Calculo_Numerico.birge_vieta",
+        "peekOfCode": "x0 = 6\nk, x0, b = birge_vieta(a, x0, erro)\nprint(k, \"iterações\")\nprint(\"x =\", x0)\nprint(\"r =\", b[-1])",
+        "detail": "Calculo_Numerico.birge_vieta",
+        "documentation": {}
+    },
+    {
         "label": "f",
         "kind": 2,
         "importPath": "Calculo_Numerico.bissecao",
@@ -161,6 +537,60 @@
         "description": "Calculo_Numerico.bissecao",
         "peekOfCode": "def bissecao(a, b):\n    k = 0\n    erro = f(a)\n    while math.fabs(erro) >= 10**(-6):\n        k += 1\n        m = (a+b)/2\n        erro = f(m)\n        if f(a)*erro < 0:\n            b = m\n        else:",
         "detail": "Calculo_Numerico.bissecao",
+        "documentation": {}
+    },
+    {
+        "label": "crout",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.crout",
+        "description": "Calculo_Numerico.crout",
+        "peekOfCode": "def crout(A, b):\n    n = len(b)\n    L = [0]*n\n    U = [0]*n\n    for i in range(n):\n        L[i] = [0]*n\n        U[i] = [0]*n\n        U[i][i] = 1\n    for k in range(n):\n        for i in range(k, n):",
+        "detail": "Calculo_Numerico.crout",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.crout",
+        "description": "Calculo_Numerico.crout",
+        "peekOfCode": "A = [\n    [1, -2, 7, 2],\n    [2, 5, -3, 1],\n    [9, -6, 4, 1],\n    [4, -3, -6, 7]\n]\nb = [-18, 31, 35, 15]\nL, U, y, x, r = crout(A, b)\nprintar(L, U, y, x, r)",
+        "detail": "Calculo_Numerico.crout",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.crout",
+        "description": "Calculo_Numerico.crout",
+        "peekOfCode": "b = [-18, 31, 35, 15]\nL, U, y, x, r = crout(A, b)\nprintar(L, U, y, x, r)",
+        "detail": "Calculo_Numerico.crout",
+        "documentation": {}
+    },
+    {
+        "label": "dif_div",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.diferencas_divididas",
+        "description": "Calculo_Numerico.diferencas_divididas",
+        "peekOfCode": "def dif_div(ordem, xv, yv, i=0):\n    if ordem == 0:\n        return yv[i]\n    saida = dif_div(ordem-1, xv, yv, i + 1)\n    saida -= dif_div(ordem-1, xv, yv, i)\n    saida /= (xv[i + ordem] - xv[i])\n    return saida\ndef dif_div_n_rec(xv, yv):\n    n = len(xv)\n    A = [[yv[i] for i in range(n + j*0)] for j in range(n)]",
+        "detail": "Calculo_Numerico.diferencas_divididas",
+        "documentation": {}
+    },
+    {
+        "label": "dif_div_n_rec",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.diferencas_divididas",
+        "description": "Calculo_Numerico.diferencas_divididas",
+        "peekOfCode": "def dif_div_n_rec(xv, yv):\n    n = len(xv)\n    A = [[yv[i] for i in range(n + j*0)] for j in range(n)]\n    saida = [yv[0]]*n\n    for i in range(1, n):\n        for j in range(n-i):\n            temp = (A[i-1][j+1] - A[i-1][j])\n            A[i][j] = temp / (xv[j+i] - xv[j])\n        saida[i] = A[i][0]\n    return saida",
+        "detail": "Calculo_Numerico.diferencas_divididas",
+        "documentation": {}
+    },
+    {
+        "label": "Newton_dif_div",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.diferencas_divididas",
+        "description": "Calculo_Numerico.diferencas_divididas",
+        "peekOfCode": "def Newton_dif_div(xv, yv, x):\n    n = len(xv)\n    saida = 0\n    DD = dif_div_n_rec(xv, yv)\n    for i in range(n):\n        termo = DD[i]\n        for j in range(i):\n            termo *= (x - xv[j])\n        saida += termo\n    return saida",
+        "detail": "Calculo_Numerico.diferencas_divididas",
         "documentation": {}
     },
     {
@@ -224,6 +654,1158 @@
         "description": "Calculo_Numerico.falsa_posicao",
         "peekOfCode": "def falsa_posicao(a, b):\n    k, erro = 0, f(a)\n    while math.fabs(erro) > 10**(-15):\n        k += 1\n        m = r(a, b)\n        erro = f(m)\n        if erro*f(a) < 0:\n            b = m\n        else:\n            a = m",
         "detail": "Calculo_Numerico.falsa_posicao",
+        "documentation": {}
+    },
+    {
+        "label": "pivota",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.gauss",
+        "description": "Calculo_Numerico.gauss",
+        "peekOfCode": "def pivota(inicio, n, A, indices):\n    max, k = abs(A[indices[inicio]][inicio]), inicio\n    for i in range(inicio+1, n):\n        if abs(A[indices[i]][inicio]) > max:\n            max = abs(A[indices[i]][inicio])\n            k = i\n    indices[inicio], indices[k] = indices[k], indices[inicio]\ndef gauss_sem_pivo(A, b):\n    n = len(b)\n    indices = [i for i in range(n)]",
+        "detail": "Calculo_Numerico.gauss",
+        "documentation": {}
+    },
+    {
+        "label": "gauss_sem_pivo",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.gauss",
+        "description": "Calculo_Numerico.gauss",
+        "peekOfCode": "def gauss_sem_pivo(A, b):\n    n = len(b)\n    indices = [i for i in range(n)]\n    for k in range(n):\n        pivota(k, n, A, indices)\n        for i in range(k+1, n):\n            m = A[indices[i]][k]/A[indices[k]][k]\n            b[indices[i]] -= m*b[indices[k]]\n            for j in range(k, n):\n                A[indices[i]][j] -= m*A[indices[k]][j]",
+        "detail": "Calculo_Numerico.gauss",
+        "documentation": {}
+    },
+    {
+        "label": "gauss_jacobi",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.gauss_jacobi",
+        "description": "Calculo_Numerico.gauss_jacobi",
+        "peekOfCode": "def gauss_jacobi(A, b, erro, w=1):\n    n = len(A)\n    x = [0]*n\n    x0 = [0]*n\n    k = 0\n    margem = b[0]\n    while abs(margem) >= erro:\n        k += 1\n        for i in range(n):\n            x0[i] = b[i]",
+        "detail": "Calculo_Numerico.gauss_jacobi",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_jacobi",
+        "description": "Calculo_Numerico.gauss_jacobi",
+        "peekOfCode": "A = [\n    [3, -1, -1],\n    [1, 3, 1],\n    [2, -2, 4]\n]\nb = [1, 5, 4]\nerro = 10**(-16)\nw = 0.7\nx, k = gauss_jacobi(A, b, erro, w)\nprint(\"A = \")",
+        "detail": "Calculo_Numerico.gauss_jacobi",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_jacobi",
+        "description": "Calculo_Numerico.gauss_jacobi",
+        "peekOfCode": "b = [1, 5, 4]\nerro = 10**(-16)\nw = 0.7\nx, k = gauss_jacobi(A, b, erro, w)\nprint(\"A = \")\nfor i in A:\n    print(i)\nprint(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")",
+        "detail": "Calculo_Numerico.gauss_jacobi",
+        "documentation": {}
+    },
+    {
+        "label": "erro",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_jacobi",
+        "description": "Calculo_Numerico.gauss_jacobi",
+        "peekOfCode": "erro = 10**(-16)\nw = 0.7\nx, k = gauss_jacobi(A, b, erro, w)\nprint(\"A = \")\nfor i in A:\n    print(i)\nprint(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")\nprint(\"\\nx = \")",
+        "detail": "Calculo_Numerico.gauss_jacobi",
+        "documentation": {}
+    },
+    {
+        "label": "w",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_jacobi",
+        "description": "Calculo_Numerico.gauss_jacobi",
+        "peekOfCode": "w = 0.7\nx, k = gauss_jacobi(A, b, erro, w)\nprint(\"A = \")\nfor i in A:\n    print(i)\nprint(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")\nprint(\"\\nx = \")\nprint(x)",
+        "detail": "Calculo_Numerico.gauss_jacobi",
+        "documentation": {}
+    },
+    {
+        "label": "print(\"A",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_jacobi",
+        "description": "Calculo_Numerico.gauss_jacobi",
+        "peekOfCode": "print(\"A = \")\nfor i in A:\n    print(i)\nprint(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")\nprint(\"\\nx = \")\nprint(x)",
+        "detail": "Calculo_Numerico.gauss_jacobi",
+        "documentation": {}
+    },
+    {
+        "label": "print(\"\\nb",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_jacobi",
+        "description": "Calculo_Numerico.gauss_jacobi",
+        "peekOfCode": "print(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")\nprint(\"\\nx = \")\nprint(x)",
+        "detail": "Calculo_Numerico.gauss_jacobi",
+        "documentation": {}
+    },
+    {
+        "label": "print(\"\\nx",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_jacobi",
+        "description": "Calculo_Numerico.gauss_jacobi",
+        "peekOfCode": "print(\"\\nx = \")\nprint(x)",
+        "detail": "Calculo_Numerico.gauss_jacobi",
+        "documentation": {}
+    },
+    {
+        "label": "pivota",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.gauss_pivo",
+        "description": "Calculo_Numerico.gauss_pivo",
+        "peekOfCode": "def pivota(inicio, n, A, b, indices):\n    max, k = abs(A[inicio][inicio]), inicio\n    for i in range(inicio, n):\n        if abs(A[i][inicio]) > max:\n            max = abs(A[i][inicio])\n            k = i\n    A[inicio], A[k] = A[k], A[inicio]\n    b[inicio], b[k] = b[k], b[inicio]\n    indices[inicio], indices[k] = indices[k], indices[inicio]\ndef gauss(A, b):",
+        "detail": "Calculo_Numerico.gauss_pivo",
+        "documentation": {}
+    },
+    {
+        "label": "gauss",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.gauss_pivo",
+        "description": "Calculo_Numerico.gauss_pivo",
+        "peekOfCode": "def gauss(A, b):\n    n = len(b)\n    indices = [i for i in range(n)]\n    for k in range(n):\n        pivota(k, n, A, b, indices)\n        for i in range(k+1, n):\n            m = A[i][k]/A[k][k]\n            b[i] -= m*b[k]\n            for j in range(k, n):\n                A[i][j] -= m*A[k][j]",
+        "detail": "Calculo_Numerico.gauss_pivo",
+        "documentation": {}
+    },
+    {
+        "label": "flag",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_pivo",
+        "description": "Calculo_Numerico.gauss_pivo",
+        "peekOfCode": "flag = 1\nif flag == 0:\n    A = [\n        [1, 1, 1.5, 1, 1.5, 0, 0, 0, 0, 0],\n        [0, 1, 0.01, 0.51, 1.5, 0.5, 0, 0, 0, 0],\n        [2.9, 1, 2, 1, 1, 0, 5, 0, 0, 0],\n        [9, 1, 0.2, 1, 1, 0, 0, 1.5, 0, 0],\n        [1, 0, 2, 0, 0, 1, 1, 1, 0, 2],\n        [0, 1, 0, 0, -2, 0, 1, -1, 1, 1],\n        [1, 0, 2, 0, 0, 0, 1, 1, 1, 0],",
+        "detail": "Calculo_Numerico.gauss_pivo",
+        "documentation": {}
+    },
+    {
+        "label": "gauss_seidel",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.gauss_seidel",
+        "description": "Calculo_Numerico.gauss_seidel",
+        "peekOfCode": "def gauss_seidel(A, b, erro, w=1):\n    n = len(A)\n    x = [0]*n\n    k = 0\n    margem = b[0]\n    while abs(margem) >= erro:\n        k += 1\n        for i in range(n):\n            x0 = x[i]\n            x[i] = b[i]",
+        "detail": "Calculo_Numerico.gauss_seidel",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_seidel",
+        "description": "Calculo_Numerico.gauss_seidel",
+        "peekOfCode": "A = [\n    [3, -1, -1],\n    [1, 3, 1],\n    [2, -2, 4]\n]\nb = [1, 5, 4]\nerro = 10**(-16)\nw = 0.85\nx, k = gauss_seidel(A, b, erro, w)\nprint(\"A = \")",
+        "detail": "Calculo_Numerico.gauss_seidel",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_seidel",
+        "description": "Calculo_Numerico.gauss_seidel",
+        "peekOfCode": "b = [1, 5, 4]\nerro = 10**(-16)\nw = 0.85\nx, k = gauss_seidel(A, b, erro, w)\nprint(\"A = \")\nfor i in A:\n    print(i)\nprint(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")",
+        "detail": "Calculo_Numerico.gauss_seidel",
+        "documentation": {}
+    },
+    {
+        "label": "erro",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_seidel",
+        "description": "Calculo_Numerico.gauss_seidel",
+        "peekOfCode": "erro = 10**(-16)\nw = 0.85\nx, k = gauss_seidel(A, b, erro, w)\nprint(\"A = \")\nfor i in A:\n    print(i)\nprint(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")\nprint(\"\\nx = \")",
+        "detail": "Calculo_Numerico.gauss_seidel",
+        "documentation": {}
+    },
+    {
+        "label": "w",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_seidel",
+        "description": "Calculo_Numerico.gauss_seidel",
+        "peekOfCode": "w = 0.85\nx, k = gauss_seidel(A, b, erro, w)\nprint(\"A = \")\nfor i in A:\n    print(i)\nprint(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")\nprint(\"\\nx = \")\nprint(x)",
+        "detail": "Calculo_Numerico.gauss_seidel",
+        "documentation": {}
+    },
+    {
+        "label": "print(\"A",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_seidel",
+        "description": "Calculo_Numerico.gauss_seidel",
+        "peekOfCode": "print(\"A = \")\nfor i in A:\n    print(i)\nprint(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")\nprint(\"\\nx = \")\nprint(x)",
+        "detail": "Calculo_Numerico.gauss_seidel",
+        "documentation": {}
+    },
+    {
+        "label": "print(\"\\nb",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_seidel",
+        "description": "Calculo_Numerico.gauss_seidel",
+        "peekOfCode": "print(\"\\nb = \")\nprint(b, end=\"\\n\\n\")\nprint(k, \"iterações\")\nprint(\"\\nx = \")\nprint(x)",
+        "detail": "Calculo_Numerico.gauss_seidel",
+        "documentation": {}
+    },
+    {
+        "label": "print(\"\\nx",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.gauss_seidel",
+        "description": "Calculo_Numerico.gauss_seidel",
+        "peekOfCode": "print(\"\\nx = \")\nprint(x)",
+        "detail": "Calculo_Numerico.gauss_seidel",
+        "documentation": {}
+    },
+    {
+        "label": "interpola",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.interpolacao_linear",
+        "description": "Calculo_Numerico.interpolacao_linear",
+        "peekOfCode": "def interpola(x, y, x0):\n    n = len(x)\n    A = [0]*n\n    for i in range(n):\n        A[i] = [1]*n\n        for j in range(1, n):\n            A[i][j] = x[i]**j\n    F = gauss.gauss_sem_pivo(A, y)\n    x1 = F[0]\n    for i in range(1, n):",
+        "detail": "Calculo_Numerico.interpolacao_linear",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.interpolacao_linear",
+        "description": "Calculo_Numerico.interpolacao_linear",
+        "peekOfCode": "x = [-3, -2, 1, 3]\ny = [-1, 2, -1, 10]\nx = [-1, 0, 1]\ny = [4, 1, -1]\nx0 = 2\nx1 = interpola(x, y, x0)\nprint(\"f(x) =\", x1)",
+        "detail": "Calculo_Numerico.interpolacao_linear",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.interpolacao_linear",
+        "description": "Calculo_Numerico.interpolacao_linear",
+        "peekOfCode": "y = [-1, 2, -1, 10]\nx = [-1, 0, 1]\ny = [4, 1, -1]\nx0 = 2\nx1 = interpola(x, y, x0)\nprint(\"f(x) =\", x1)",
+        "detail": "Calculo_Numerico.interpolacao_linear",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.interpolacao_linear",
+        "description": "Calculo_Numerico.interpolacao_linear",
+        "peekOfCode": "x = [-1, 0, 1]\ny = [4, 1, -1]\nx0 = 2\nx1 = interpola(x, y, x0)\nprint(\"f(x) =\", x1)",
+        "detail": "Calculo_Numerico.interpolacao_linear",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.interpolacao_linear",
+        "description": "Calculo_Numerico.interpolacao_linear",
+        "peekOfCode": "y = [4, 1, -1]\nx0 = 2\nx1 = interpola(x, y, x0)\nprint(\"f(x) =\", x1)",
+        "detail": "Calculo_Numerico.interpolacao_linear",
+        "documentation": {}
+    },
+    {
+        "label": "x0",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.interpolacao_linear",
+        "description": "Calculo_Numerico.interpolacao_linear",
+        "peekOfCode": "x0 = 2\nx1 = interpola(x, y, x0)\nprint(\"f(x) =\", x1)",
+        "detail": "Calculo_Numerico.interpolacao_linear",
+        "documentation": {}
+    },
+    {
+        "label": "x1",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.interpolacao_linear",
+        "description": "Calculo_Numerico.interpolacao_linear",
+        "peekOfCode": "x1 = interpola(x, y, x0)\nprint(\"f(x) =\", x1)",
+        "detail": "Calculo_Numerico.interpolacao_linear",
+        "documentation": {}
+    },
+    {
+        "label": "L",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.lagrange",
+        "description": "Calculo_Numerico.lagrange",
+        "peekOfCode": "def L(n, x, k, xv):\n    saidaN = saidaD = 1\n    for i in range(k):\n        saidaN *= (x - xv[i])\n        saidaD *= (xv[k] - xv[i])\n    for i in range(k+1, n):\n        saidaN *= (x - xv[i])\n        saidaD *= (xv[k] - xv[i])\n    return saidaN/saidaD\ndef Lagrange(x, xv, yv):",
+        "detail": "Calculo_Numerico.lagrange",
+        "documentation": {}
+    },
+    {
+        "label": "Lagrange",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.lagrange",
+        "description": "Calculo_Numerico.lagrange",
+        "peekOfCode": "def Lagrange(x, xv, yv):\n    saida = 0\n    n = len(xv)\n    for i in range(n):\n        saida += yv[i]*L(n, x, i, xv)\n    return saida\nxv, yv, x = [-3, -2, 1, 3], [-1, 2, -1, 10], 2\nprint(Lagrange(x, xv, yv))\nxv, yv, x = [-1, 0, 2], [4, 1, -1], 1\nprint(Lagrange(x, xv, yv))",
+        "detail": "Calculo_Numerico.lagrange",
+        "documentation": {}
+    },
+    {
+        "label": "f",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.newton",
+        "description": "Calculo_Numerico.newton",
+        "peekOfCode": "def f(x):\n    return (math.e)**x - 4*x*x\ndef df(x):\n    return (math.e)**x - 8*x\ndef Newton(x0, erro):\n    k = 0\n    m = x0\n    while math.fabs(f(m)) >= erro:\n        m = m - f(m)/df(m)\n        k += 1",
+        "detail": "Calculo_Numerico.newton",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.newton",
+        "description": "Calculo_Numerico.newton",
+        "peekOfCode": "def df(x):\n    return (math.e)**x - 8*x\ndef Newton(x0, erro):\n    k = 0\n    m = x0\n    while math.fabs(f(m)) >= erro:\n        m = m - f(m)/df(m)\n        k += 1\n    return m, k\nx0, erro = 1, 10**(-6)",
+        "detail": "Calculo_Numerico.newton",
+        "documentation": {}
+    },
+    {
+        "label": "Newton",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.newton",
+        "description": "Calculo_Numerico.newton",
+        "peekOfCode": "def Newton(x0, erro):\n    k = 0\n    m = x0\n    while math.fabs(f(m)) >= erro:\n        m = m - f(m)/df(m)\n        k += 1\n    return m, k\nx0, erro = 1, 10**(-6)\nx, k = Newton(x0, erro)\nprint(k, \"iterações\")",
+        "detail": "Calculo_Numerico.newton",
+        "documentation": {}
+    },
+    {
+        "label": "printFloat",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def printFloat(x):\n    print(\"%.5f\" % x, end=' ')\ndef printR(r, n):\n    print(\"r =\")\n    for i in range(n):\n        printFloat(r[i])\n    print(\"\\n\")\ndef confere(A, b, x, n, indices=[], erro=0):\n    if len(indices) != n:\n        indices = [i for i in range(n)]",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "printR",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def printR(r, n):\n    print(\"r =\")\n    for i in range(n):\n        printFloat(r[i])\n    print(\"\\n\")\ndef confere(A, b, x, n, indices=[], erro=0):\n    if len(indices) != n:\n        indices = [i for i in range(n)]\n    r = [i for i in b]\n    print(\"conferindo:\")",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "confere",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def confere(A, b, x, n, indices=[], erro=0):\n    if len(indices) != n:\n        indices = [i for i in range(n)]\n    r = [i for i in b]\n    print(\"conferindo:\")\n    for i in range(n-1, -1, -1):\n        temp = 0\n        for j in range(n-1, -1, -1):\n            temp += A[indices[i]][j]*x[j]\n        print(\"b[%d] =\" % i, end=' ')",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "printA",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def printA(A, n):\n    print(\"Matriz =\")\n    for i in range(n):\n        for j in range(n):\n            printFloat(A[i][j])\n        print('\\n\\n')\n    print()\ndef printB(b, n):\n    print(\"b =\")\n    for i in range(n):",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "printB",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def printB(b, n):\n    print(\"b =\")\n    for i in range(n):\n        printFloat(b[i])\n    print(\"\\n\")\ndef printX(x, n):\n    print(\"x =\")\n    for i in range(n):\n        printFloat(x[i])\n    print(\"\\n\")",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "printX",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def printX(x, n):\n    print(\"x =\")\n    for i in range(n):\n        printFloat(x[i])\n    print(\"\\n\")\ndef printIndices(o, n):\n    print(\"índices =\", end=' ')\n    for i in range(n):\n        print('%d' % (o[i]), end=' ')\n    print(\"\\n\")",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "printIndices",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def printIndices(o, n):\n    print(\"índices =\", end=' ')\n    for i in range(n):\n        print('%d' % (o[i]), end=' ')\n    print(\"\\n\")\ndef printar(A, b, x, flag0=0, o=[], flag1=0):\n    n = len(b)\n    printA(A, n)\n    printB(b, n)\n    printX(x, n)",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "printar",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def printar(A, b, x, flag0=0, o=[], flag1=0):\n    n = len(b)\n    printA(A, n)\n    printB(b, n)\n    printX(x, n)\n    if flag0 == 1:\n        confere(A, b, x, n, o)\n    if flag1 == 1:\n        printIndices(o, n)",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "n0",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n0 = [[1], [1]]\nn1 = [[0], [2]]\nn2 = [[1, 1], [-(3)**(-1/2), (3)**(-1/2)]]\nn3 = [[0.8888888888888888,\n       0.5555555555555556,\n       0.5555555555555556],\n      [0, -0.7745966692414834,\n      0.7745966692414834]\n      ]\nn4 = [[0.6521451548625461, 0.6521451548625461,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n1",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n1 = [[0], [2]]\nn2 = [[1, 1], [-(3)**(-1/2), (3)**(-1/2)]]\nn3 = [[0.8888888888888888,\n       0.5555555555555556,\n       0.5555555555555556],\n      [0, -0.7745966692414834,\n      0.7745966692414834]\n      ]\nn4 = [[0.6521451548625461, 0.6521451548625461,\n       0.3478548451374538, 0.3478548451374538],",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n2",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n2 = [[1, 1], [-(3)**(-1/2), (3)**(-1/2)]]\nn3 = [[0.8888888888888888,\n       0.5555555555555556,\n       0.5555555555555556],\n      [0, -0.7745966692414834,\n      0.7745966692414834]\n      ]\nn4 = [[0.6521451548625461, 0.6521451548625461,\n       0.3478548451374538, 0.3478548451374538],\n      [-0.3399810435848563, 0.3399810435848563,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n3",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n3 = [[0.8888888888888888,\n       0.5555555555555556,\n       0.5555555555555556],\n      [0, -0.7745966692414834,\n      0.7745966692414834]\n      ]\nn4 = [[0.6521451548625461, 0.6521451548625461,\n       0.3478548451374538, 0.3478548451374538],\n      [-0.3399810435848563, 0.3399810435848563,\n       -0.8611363115940526, 0.8611363115940526]]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n4",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n4 = [[0.6521451548625461, 0.6521451548625461,\n       0.3478548451374538, 0.3478548451374538],\n      [-0.3399810435848563, 0.3399810435848563,\n       -0.8611363115940526, 0.8611363115940526]]\nn5 = [[0.5688888888888889, 0.4786286704993665,\n       0.4786286704993665, 0.2369268850561891,\n       0.2369268850561891], [0, -0.5384693101056831,\n                             0.5384693101056831, -0.9061798459386640,\n                             0.9061798459386640]]\nn6 = [[0.3607615730481386, 0.3607615730481386,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n5",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n5 = [[0.5688888888888889, 0.4786286704993665,\n       0.4786286704993665, 0.2369268850561891,\n       0.2369268850561891], [0, -0.5384693101056831,\n                             0.5384693101056831, -0.9061798459386640,\n                             0.9061798459386640]]\nn6 = [[0.3607615730481386, 0.3607615730481386,\n       0.4679139345726910, 0.4679139345726910,\n       0.1713244923791704, 0.1713244923791704],\n      [0.6612093864662645, -0.6612093864662645,\n       -0.2386191860831969, 0.2386191860831969",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n6",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n6 = [[0.3607615730481386, 0.3607615730481386,\n       0.4679139345726910, 0.4679139345726910,\n       0.1713244923791704, 0.1713244923791704],\n      [0.6612093864662645, -0.6612093864662645,\n       -0.2386191860831969, 0.2386191860831969\n       - 0.9324695142031521,  0.9324695142031521]]\nn7 = [[0.4179591836734694, 0.3818300505051189,\n       0.3818300505051189, 0.2797053914892766,\n       0.2797053914892766, 0.1294849661688697,\n       0.1294849661688697], [0, 0.4058451513773972,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n7",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n7 = [[0.4179591836734694, 0.3818300505051189,\n       0.3818300505051189, 0.2797053914892766,\n       0.2797053914892766, 0.1294849661688697,\n       0.1294849661688697], [0, 0.4058451513773972,\n                             -0.4058451513773972, -0.7415311855993945,\n                             0.7415311855993945, -0.9491079123427585,\n                             0.9491079123427585]]\nn8 = [[], []]\nn9 = [[], []]\nn10 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n8",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n8 = [[], []]\nn9 = [[], []]\nn10 = [[], []]\nn11 = [[], []]\nn12 = [[], []]\nn13 = [[], []]\nn14 = [[], []]\nn15 = [[], []]\nn16 = [[], []]\nn17 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n9",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n9 = [[], []]\nn10 = [[], []]\nn11 = [[], []]\nn12 = [[], []]\nn13 = [[], []]\nn14 = [[], []]\nn15 = [[], []]\nn16 = [[], []]\nn17 = [[], []]\nn18 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n10",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n10 = [[], []]\nn11 = [[], []]\nn12 = [[], []]\nn13 = [[], []]\nn14 = [[], []]\nn15 = [[], []]\nn16 = [[], []]\nn17 = [[], []]\nn18 = [[], []]\nn19 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n11",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n11 = [[], []]\nn12 = [[], []]\nn13 = [[], []]\nn14 = [[], []]\nn15 = [[], []]\nn16 = [[], []]\nn17 = [[], []]\nn18 = [[], []]\nn19 = [[], []]\nn20 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n12",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n12 = [[], []]\nn13 = [[], []]\nn14 = [[], []]\nn15 = [[], []]\nn16 = [[], []]\nn17 = [[], []]\nn18 = [[], []]\nn19 = [[], []]\nn20 = [[], []]\nn21 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n13",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n13 = [[], []]\nn14 = [[], []]\nn15 = [[], []]\nn16 = [[], []]\nn17 = [[], []]\nn18 = [[], []]\nn19 = [[], []]\nn20 = [[], []]\nn21 = [[], []]\nn22 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n14",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n14 = [[], []]\nn15 = [[], []]\nn16 = [[], []]\nn17 = [[], []]\nn18 = [[], []]\nn19 = [[], []]\nn20 = [[], []]\nn21 = [[], []]\nn22 = [[], []]\nn23 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n15",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n15 = [[], []]\nn16 = [[], []]\nn17 = [[], []]\nn18 = [[], []]\nn19 = [[], []]\nn20 = [[], []]\nn21 = [[], []]\nn22 = [[], []]\nn23 = [[], []]\nn24 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n16",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n16 = [[], []]\nn17 = [[], []]\nn18 = [[], []]\nn19 = [[], []]\nn20 = [[], []]\nn21 = [[], []]\nn22 = [[], []]\nn23 = [[], []]\nn24 = [[], []]\nn25 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n17",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n17 = [[], []]\nn18 = [[], []]\nn19 = [[], []]\nn20 = [[], []]\nn21 = [[], []]\nn22 = [[], []]\nn23 = [[], []]\nn24 = [[], []]\nn25 = [[], []]\nn26 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n18",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n18 = [[], []]\nn19 = [[], []]\nn20 = [[], []]\nn21 = [[], []]\nn22 = [[], []]\nn23 = [[], []]\nn24 = [[], []]\nn25 = [[], []]\nn26 = [[], []]\nn27 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n19",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n19 = [[], []]\nn20 = [[], []]\nn21 = [[], []]\nn22 = [[], []]\nn23 = [[], []]\nn24 = [[], []]\nn25 = [[], []]\nn26 = [[], []]\nn27 = [[], []]\nn28 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n20",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n20 = [[], []]\nn21 = [[], []]\nn22 = [[], []]\nn23 = [[], []]\nn24 = [[], []]\nn25 = [[], []]\nn26 = [[], []]\nn27 = [[], []]\nn28 = [[], []]\nn29 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n21",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n21 = [[], []]\nn22 = [[], []]\nn23 = [[], []]\nn24 = [[], []]\nn25 = [[], []]\nn26 = [[], []]\nn27 = [[], []]\nn28 = [[], []]\nn29 = [[], []]\nn30 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n22",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n22 = [[], []]\nn23 = [[], []]\nn24 = [[], []]\nn25 = [[], []]\nn26 = [[], []]\nn27 = [[], []]\nn28 = [[], []]\nn29 = [[], []]\nn30 = [[], []]\nn31 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n23",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n23 = [[], []]\nn24 = [[], []]\nn25 = [[], []]\nn26 = [[], []]\nn27 = [[], []]\nn28 = [[], []]\nn29 = [[], []]\nn30 = [[], []]\nn31 = [[], []]\nn32 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n24",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n24 = [[], []]\nn25 = [[], []]\nn26 = [[], []]\nn27 = [[], []]\nn28 = [[], []]\nn29 = [[], []]\nn30 = [[], []]\nn31 = [[], []]\nn32 = [[], []]\nn33 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n25",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n25 = [[], []]\nn26 = [[], []]\nn27 = [[], []]\nn28 = [[], []]\nn29 = [[], []]\nn30 = [[], []]\nn31 = [[], []]\nn32 = [[], []]\nn33 = [[], []]\nn34 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n26",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n26 = [[], []]\nn27 = [[], []]\nn28 = [[], []]\nn29 = [[], []]\nn30 = [[], []]\nn31 = [[], []]\nn32 = [[], []]\nn33 = [[], []]\nn34 = [[], []]\nn35 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n27",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n27 = [[], []]\nn28 = [[], []]\nn29 = [[], []]\nn30 = [[], []]\nn31 = [[], []]\nn32 = [[], []]\nn33 = [[], []]\nn34 = [[], []]\nn35 = [[], []]\nn36 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n28",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n28 = [[], []]\nn29 = [[], []]\nn30 = [[], []]\nn31 = [[], []]\nn32 = [[], []]\nn33 = [[], []]\nn34 = [[], []]\nn35 = [[], []]\nn36 = [[], []]\nn37 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n29",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n29 = [[], []]\nn30 = [[], []]\nn31 = [[], []]\nn32 = [[], []]\nn33 = [[], []]\nn34 = [[], []]\nn35 = [[], []]\nn36 = [[], []]\nn37 = [[], []]\nn38 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n30",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n30 = [[], []]\nn31 = [[], []]\nn32 = [[], []]\nn33 = [[], []]\nn34 = [[], []]\nn35 = [[], []]\nn36 = [[], []]\nn37 = [[], []]\nn38 = [[], []]\nn39 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n31",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n31 = [[], []]\nn32 = [[], []]\nn33 = [[], []]\nn34 = [[], []]\nn35 = [[], []]\nn36 = [[], []]\nn37 = [[], []]\nn38 = [[], []]\nn39 = [[], []]\nn40 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n32",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n32 = [[], []]\nn33 = [[], []]\nn34 = [[], []]\nn35 = [[], []]\nn36 = [[], []]\nn37 = [[], []]\nn38 = [[], []]\nn39 = [[], []]\nn40 = [[], []]\nn41 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n33",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n33 = [[], []]\nn34 = [[], []]\nn35 = [[], []]\nn36 = [[], []]\nn37 = [[], []]\nn38 = [[], []]\nn39 = [[], []]\nn40 = [[], []]\nn41 = [[], []]\nn42 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n34",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n34 = [[], []]\nn35 = [[], []]\nn36 = [[], []]\nn37 = [[], []]\nn38 = [[], []]\nn39 = [[], []]\nn40 = [[], []]\nn41 = [[], []]\nn42 = [[], []]\nn43 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n35",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n35 = [[], []]\nn36 = [[], []]\nn37 = [[], []]\nn38 = [[], []]\nn39 = [[], []]\nn40 = [[], []]\nn41 = [[], []]\nn42 = [[], []]\nn43 = [[], []]\nn44 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n36",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n36 = [[], []]\nn37 = [[], []]\nn38 = [[], []]\nn39 = [[], []]\nn40 = [[], []]\nn41 = [[], []]\nn42 = [[], []]\nn43 = [[], []]\nn44 = [[], []]\nn45 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n37",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n37 = [[], []]\nn38 = [[], []]\nn39 = [[], []]\nn40 = [[], []]\nn41 = [[], []]\nn42 = [[], []]\nn43 = [[], []]\nn44 = [[], []]\nn45 = [[], []]\nn46 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n38",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n38 = [[], []]\nn39 = [[], []]\nn40 = [[], []]\nn41 = [[], []]\nn42 = [[], []]\nn43 = [[], []]\nn44 = [[], []]\nn45 = [[], []]\nn46 = [[], []]\nn47 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n39",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n39 = [[], []]\nn40 = [[], []]\nn41 = [[], []]\nn42 = [[], []]\nn43 = [[], []]\nn44 = [[], []]\nn45 = [[], []]\nn46 = [[], []]\nn47 = [[], []]\nn48 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n40",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n40 = [[], []]\nn41 = [[], []]\nn42 = [[], []]\nn43 = [[], []]\nn44 = [[], []]\nn45 = [[], []]\nn46 = [[], []]\nn47 = [[], []]\nn48 = [[], []]\nn49 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n41",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n41 = [[], []]\nn42 = [[], []]\nn43 = [[], []]\nn44 = [[], []]\nn45 = [[], []]\nn46 = [[], []]\nn47 = [[], []]\nn48 = [[], []]\nn49 = [[], []]\nn50 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n42",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n42 = [[], []]\nn43 = [[], []]\nn44 = [[], []]\nn45 = [[], []]\nn46 = [[], []]\nn47 = [[], []]\nn48 = [[], []]\nn49 = [[], []]\nn50 = [[], []]\nn51 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n43",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n43 = [[], []]\nn44 = [[], []]\nn45 = [[], []]\nn46 = [[], []]\nn47 = [[], []]\nn48 = [[], []]\nn49 = [[], []]\nn50 = [[], []]\nn51 = [[], []]\nn52 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n44",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n44 = [[], []]\nn45 = [[], []]\nn46 = [[], []]\nn47 = [[], []]\nn48 = [[], []]\nn49 = [[], []]\nn50 = [[], []]\nn51 = [[], []]\nn52 = [[], []]\nn53 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n45",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n45 = [[], []]\nn46 = [[], []]\nn47 = [[], []]\nn48 = [[], []]\nn49 = [[], []]\nn50 = [[], []]\nn51 = [[], []]\nn52 = [[], []]\nn53 = [[], []]\nn54 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n46",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n46 = [[], []]\nn47 = [[], []]\nn48 = [[], []]\nn49 = [[], []]\nn50 = [[], []]\nn51 = [[], []]\nn52 = [[], []]\nn53 = [[], []]\nn54 = [[], []]\nn55 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n47",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n47 = [[], []]\nn48 = [[], []]\nn49 = [[], []]\nn50 = [[], []]\nn51 = [[], []]\nn52 = [[], []]\nn53 = [[], []]\nn54 = [[], []]\nn55 = [[], []]\nn56 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n48",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n48 = [[], []]\nn49 = [[], []]\nn50 = [[], []]\nn51 = [[], []]\nn52 = [[], []]\nn53 = [[], []]\nn54 = [[], []]\nn55 = [[], []]\nn56 = [[], []]\nn57 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n49",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n49 = [[], []]\nn50 = [[], []]\nn51 = [[], []]\nn52 = [[], []]\nn53 = [[], []]\nn54 = [[], []]\nn55 = [[], []]\nn56 = [[], []]\nn57 = [[], []]\nn58 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n50",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n50 = [[], []]\nn51 = [[], []]\nn52 = [[], []]\nn53 = [[], []]\nn54 = [[], []]\nn55 = [[], []]\nn56 = [[], []]\nn57 = [[], []]\nn58 = [[], []]\nn59 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n51",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n51 = [[], []]\nn52 = [[], []]\nn53 = [[], []]\nn54 = [[], []]\nn55 = [[], []]\nn56 = [[], []]\nn57 = [[], []]\nn58 = [[], []]\nn59 = [[], []]\nn60 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n52",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n52 = [[], []]\nn53 = [[], []]\nn54 = [[], []]\nn55 = [[], []]\nn56 = [[], []]\nn57 = [[], []]\nn58 = [[], []]\nn59 = [[], []]\nn60 = [[], []]\nn61 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n53",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n53 = [[], []]\nn54 = [[], []]\nn55 = [[], []]\nn56 = [[], []]\nn57 = [[], []]\nn58 = [[], []]\nn59 = [[], []]\nn60 = [[], []]\nn61 = [[], []]\nn62 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n54",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n54 = [[], []]\nn55 = [[], []]\nn56 = [[], []]\nn57 = [[], []]\nn58 = [[], []]\nn59 = [[], []]\nn60 = [[], []]\nn61 = [[], []]\nn62 = [[], []]\nn63 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n55",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n55 = [[], []]\nn56 = [[], []]\nn57 = [[], []]\nn58 = [[], []]\nn59 = [[], []]\nn60 = [[], []]\nn61 = [[], []]\nn62 = [[], []]\nn63 = [[], []]\nn64 = [[], []]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n56",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n56 = [[], []]\nn57 = [[], []]\nn58 = [[], []]\nn59 = [[], []]\nn60 = [[], []]\nn61 = [[], []]\nn62 = [[], []]\nn63 = [[], []]\nn64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n57",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n57 = [[], []]\nn58 = [[], []]\nn59 = [[], []]\nn60 = [[], []]\nn61 = [[], []]\nn62 = [[], []]\nn63 = [[], []]\nn64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n58",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n58 = [[], []]\nn59 = [[], []]\nn60 = [[], []]\nn61 = [[], []]\nn62 = [[], []]\nn63 = [[], []]\nn64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,\n            n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n59",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n59 = [[], []]\nn60 = [[], []]\nn61 = [[], []]\nn62 = [[], []]\nn63 = [[], []]\nn64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,\n            n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,\n            n31, n32, n33, n34, n35, n36, n37, n38, n39, n40,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n60",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n60 = [[], []]\nn61 = [[], []]\nn62 = [[], []]\nn63 = [[], []]\nn64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,\n            n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,\n            n31, n32, n33, n34, n35, n36, n37, n38, n39, n40,\n            n41, n42, n43, n44, n45, n46, n47, n48, n49, n50,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n61",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n61 = [[], []]\nn62 = [[], []]\nn63 = [[], []]\nn64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,\n            n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,\n            n31, n32, n33, n34, n35, n36, n37, n38, n39, n40,\n            n41, n42, n43, n44, n45, n46, n47, n48, n49, n50,\n            n51, n52, n53, n54, n55, n56, n57, n58, n59, n60,",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n62",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n62 = [[], []]\nn63 = [[], []]\nn64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,\n            n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,\n            n31, n32, n33, n34, n35, n36, n37, n38, n39, n40,\n            n41, n42, n43, n44, n45, n46, n47, n48, n49, n50,\n            n51, n52, n53, n54, n55, n56, n57, n58, n59, n60,\n            n61, n62, n63, n64]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n63",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n63 = [[], []]\nn64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,\n            n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,\n            n31, n32, n33, n34, n35, n36, n37, n38, n39, n40,\n            n41, n42, n43, n44, n45, n46, n47, n48, n49, n50,\n            n51, n52, n53, n54, n55, n56, n57, n58, n59, n60,\n            n61, n62, n63, n64]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "n64",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "n64 = [[], []]\nNarquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,\n            n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,\n            n31, n32, n33, n34, n35, n36, n37, n38, n39, n40,\n            n41, n42, n43, n44, n45, n46, n47, n48, n49, n50,\n            n51, n52, n53, n54, n55, n56, n57, n58, n59, n60,\n            n61, n62, n63, n64]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "Narquivo",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.quad_arquivo",
+        "description": "Calculo_Numerico.quad_arquivo",
+        "peekOfCode": "Narquivo = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,\n            n11, n12, n13, n14, n15, n16, n17, n18, n9, n20,\n            n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,\n            n31, n32, n33, n34, n35, n36, n37, n38, n39, n40,\n            n41, n42, n43, n44, n45, n46, n47, n48, n49, n50,\n            n51, n52, n53, n54, n55, n56, n57, n58, n59, n60,\n            n61, n62, n63, n64]",
+        "detail": "Calculo_Numerico.quad_arquivo",
+        "documentation": {}
+    },
+    {
+        "label": "f",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.quadratura",
+        "description": "Calculo_Numerico.quadratura",
+        "peekOfCode": "def f(x):\n    return (x**3)/3\ndef integral(x):\n    return (x**4)/12\ndef quadratura(a, b, n):\n    N = Narquivo[n]\n    A = N[0]\n    t = N[1]\n    dx = (b-a)/2\n    saida = 0",
+        "detail": "Calculo_Numerico.quadratura",
+        "documentation": {}
+    },
+    {
+        "label": "integral",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.quadratura",
+        "description": "Calculo_Numerico.quadratura",
+        "peekOfCode": "def integral(x):\n    return (x**4)/12\ndef quadratura(a, b, n):\n    N = Narquivo[n]\n    A = N[0]\n    t = N[1]\n    dx = (b-a)/2\n    saida = 0\n    for i in range(n):\n        x = t[i]*dx + (b+a)/2",
+        "detail": "Calculo_Numerico.quadratura",
+        "documentation": {}
+    },
+    {
+        "label": "quadratura",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.quadratura",
+        "description": "Calculo_Numerico.quadratura",
+        "peekOfCode": "def quadratura(a, b, n):\n    N = Narquivo[n]\n    A = N[0]\n    t = N[1]\n    dx = (b-a)/2\n    saida = 0\n    for i in range(n):\n        x = t[i]*dx + (b+a)/2\n        saida += A[i]*f(x)*dx\n    return saida",
+        "detail": "Calculo_Numerico.quadratura",
+        "documentation": {}
+    },
+    {
+        "label": "f",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.secante",
+        "description": "Calculo_Numerico.secante",
+        "peekOfCode": "def f(x):\n    return math.e**x - 2*math.cos(x)\ndef sec(a, b):\n    return (f(a) - f(b)) / (a - b)\ndef secante(a, b, erro):\n    k = 0\n    while math.fabs(f(a)) > erro:\n        k += 1\n        c = a\n        a = (a - (f(a) / sec(a, b)))",
+        "detail": "Calculo_Numerico.secante",
+        "documentation": {}
+    },
+    {
+        "label": "sec",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.secante",
+        "description": "Calculo_Numerico.secante",
+        "peekOfCode": "def sec(a, b):\n    return (f(a) - f(b)) / (a - b)\ndef secante(a, b, erro):\n    k = 0\n    while math.fabs(f(a)) > erro:\n        k += 1\n        c = a\n        a = (a - (f(a) / sec(a, b)))\n        b = c\n    return a, k",
+        "detail": "Calculo_Numerico.secante",
+        "documentation": {}
+    },
+    {
+        "label": "secante",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.secante",
+        "description": "Calculo_Numerico.secante",
+        "peekOfCode": "def secante(a, b, erro):\n    k = 0\n    while math.fabs(f(a)) > erro:\n        k += 1\n        c = a\n        a = (a - (f(a) / sec(a, b)))\n        b = c\n    return a, k\na, b, erro = 0, 2, 10**(-15)\nx, k = secante(a, b, erro)",
+        "detail": "Calculo_Numerico.secante",
+        "documentation": {}
+    },
+    {
+        "label": "f",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.simpson",
+        "description": "Calculo_Numerico.simpson",
+        "peekOfCode": "def f(x):\n    return math.exp(x)\ndef simpson(a, b):\n    h = (b - a)/2\n    saida = f(a) + 4*f(a+h) + f(b)\n    return saida*(h/3)\ndef simpson_composto(a, b, n):\n    if not n % 2 == 0:\n        return \"N deve ser par\"\n    h = (b - a)/n",
+        "detail": "Calculo_Numerico.simpson",
+        "documentation": {}
+    },
+    {
+        "label": "simpson",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.simpson",
+        "description": "Calculo_Numerico.simpson",
+        "peekOfCode": "def simpson(a, b):\n    h = (b - a)/2\n    saida = f(a) + 4*f(a+h) + f(b)\n    return saida*(h/3)\ndef simpson_composto(a, b, n):\n    if not n % 2 == 0:\n        return \"N deve ser par\"\n    h = (b - a)/n\n    saida0 = saida1 = 0\n    N = n//2",
+        "detail": "Calculo_Numerico.simpson",
+        "documentation": {}
+    },
+    {
+        "label": "simpson_composto",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.simpson",
+        "description": "Calculo_Numerico.simpson",
+        "peekOfCode": "def simpson_composto(a, b, n):\n    if not n % 2 == 0:\n        return \"N deve ser par\"\n    h = (b - a)/n\n    saida0 = saida1 = 0\n    N = n//2\n    for i in range(1, N):\n        saida0 += f(a + (2*i - 1)*h)\n        saida1 += f(a + 2*i*h)\n    saida0 += f(b - h)",
+        "detail": "Calculo_Numerico.simpson",
+        "documentation": {}
+    },
+    {
+        "label": "simpson_preciso",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.simpson",
+        "description": "Calculo_Numerico.simpson",
+        "peekOfCode": "def simpson_preciso(a, b, erro):\n    margem = simpson(a, b)\n    fx = - margem\n    n = 4\n    while abs(margem - fx) > erro:\n        margem = fx\n        fx = simpson_composto(a, b, n)\n        n += 2\n    return fx\na, b, n, erro = 0, 1, 4, 10**(-16)",
+        "detail": "Calculo_Numerico.simpson",
+        "documentation": {}
+    },
+    {
+        "label": "F",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.sistemas_nao_lineares",
+        "description": "Calculo_Numerico.sistemas_nao_lineares",
+        "peekOfCode": "def F(X):\n    R = [\n        X[0]*2 - X[1] - math.exp(- X[0]),\n        X[1]*2 - X[0] - math.exp(- X[1]),\n    ]\n    return R\ndef J(X, derivada=False):\n    if derivada:\n        R = [\n            [2 + math.exp(-X[0]), -1],",
+        "detail": "Calculo_Numerico.sistemas_nao_lineares",
+        "documentation": {}
+    },
+    {
+        "label": "J",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.sistemas_nao_lineares",
+        "description": "Calculo_Numerico.sistemas_nao_lineares",
+        "peekOfCode": "def J(X, derivada=False):\n    if derivada:\n        R = [\n            [2 + math.exp(-X[0]), -1],\n            [-1, 2 + math.exp(-X[1])],\n        ]\n    else:\n        R = Secante(X)\n    return R\ndef Secante(X, h=10**(-12)):",
+        "detail": "Calculo_Numerico.sistemas_nao_lineares",
+        "documentation": {}
+    },
+    {
+        "label": "Secante",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.sistemas_nao_lineares",
+        "description": "Calculo_Numerico.sistemas_nao_lineares",
+        "peekOfCode": "def Secante(X, h=10**(-12)):\n    N = len(X)\n    R = [0]*N\n    FX = F(X)\n    for i in range(N):\n        R[i] = [0]*N\n    for i in range(N):\n        temp_X = [x for x in X]\n        temp_X[i] += h\n        temp_FX = F(temp_X)",
+        "detail": "Calculo_Numerico.sistemas_nao_lineares",
+        "documentation": {}
+    },
+    {
+        "label": "sistema",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.sistemas_nao_lineares",
+        "description": "Calculo_Numerico.sistemas_nao_lineares",
+        "peekOfCode": "def sistema(X, erro):\n    n = len(X)\n    D = gauss.gauss_sem_pivo(J(X), F(X))\n    flag = True\n    for i in range(n):\n        X[i] -= D[i]\n        flag = flag and (abs(D[i]) < erro)\n    return X, flag\ndef Newton(X, erro):\n    k = 0",
+        "detail": "Calculo_Numerico.sistemas_nao_lineares",
+        "documentation": {}
+    },
+    {
+        "label": "Newton",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.sistemas_nao_lineares",
+        "description": "Calculo_Numerico.sistemas_nao_lineares",
+        "peekOfCode": "def Newton(X, erro):\n    k = 0\n    flag = False\n    while not flag:\n        k += 1\n        X, flag = sistema(X, erro)\n    return k, X\nx = [-5, -5]\nerro = 10**(-8)\nk, X = Newton(x, erro)",
+        "detail": "Calculo_Numerico.sistemas_nao_lineares",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.sistemas_nao_lineares",
+        "description": "Calculo_Numerico.sistemas_nao_lineares",
+        "peekOfCode": "x = [-5, -5]\nerro = 10**(-8)\nk, X = Newton(x, erro)\nprint(\"tentativas:\", k)\nprint(\"X =\\n\", X)\nprint(F(X)[0])\nprint(F(X)[1])",
+        "detail": "Calculo_Numerico.sistemas_nao_lineares",
+        "documentation": {}
+    },
+    {
+        "label": "erro",
+        "kind": 5,
+        "importPath": "Calculo_Numerico.sistemas_nao_lineares",
+        "description": "Calculo_Numerico.sistemas_nao_lineares",
+        "peekOfCode": "erro = 10**(-8)\nk, X = Newton(x, erro)\nprint(\"tentativas:\", k)\nprint(\"X =\\n\", X)\nprint(F(X)[0])\nprint(F(X)[1])",
+        "detail": "Calculo_Numerico.sistemas_nao_lineares",
+        "documentation": {}
+    },
+    {
+        "label": "f",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.trapezio",
+        "description": "Calculo_Numerico.trapezio",
+        "peekOfCode": "def f(x):\n    return math.exp(x)\ndef trapezio(a, b):\n    return (f(b) + f(a))*(b - a)/2\ndef trapezio_composto(a, b, n):\n    h = (b - a)/n\n    saida = 0\n    for i in range(1, n):\n        saida += f(a + i*h)\n    saida *= 2",
+        "detail": "Calculo_Numerico.trapezio",
+        "documentation": {}
+    },
+    {
+        "label": "trapezio",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.trapezio",
+        "description": "Calculo_Numerico.trapezio",
+        "peekOfCode": "def trapezio(a, b):\n    return (f(b) + f(a))*(b - a)/2\ndef trapezio_composto(a, b, n):\n    h = (b - a)/n\n    saida = 0\n    for i in range(1, n):\n        saida += f(a + i*h)\n    saida *= 2\n    saida = saida + f(a) + f(b)\n    return saida*h/2",
+        "detail": "Calculo_Numerico.trapezio",
+        "documentation": {}
+    },
+    {
+        "label": "trapezio_composto",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.trapezio",
+        "description": "Calculo_Numerico.trapezio",
+        "peekOfCode": "def trapezio_composto(a, b, n):\n    h = (b - a)/n\n    saida = 0\n    for i in range(1, n):\n        saida += f(a + i*h)\n    saida *= 2\n    saida = saida + f(a) + f(b)\n    return saida*h/2\ndef trapezio_preciso(a, b, erro):\n    margem = trapezio(a, b)",
+        "detail": "Calculo_Numerico.trapezio",
+        "documentation": {}
+    },
+    {
+        "label": "trapezio_preciso",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.trapezio",
+        "description": "Calculo_Numerico.trapezio",
+        "peekOfCode": "def trapezio_preciso(a, b, erro):\n    margem = trapezio(a, b)\n    fx = - margem\n    n = 2\n    while abs(margem - fx) > erro:\n        margem = fx\n        n += 2\n        fx = trapezio_composto(a, b, n)\n    return fx, n\na, b, n, erro = 0, 1, 30320, 10**(-16)",
+        "detail": "Calculo_Numerico.trapezio",
         "documentation": {}
     },
     {
