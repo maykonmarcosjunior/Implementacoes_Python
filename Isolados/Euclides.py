@@ -5,9 +5,8 @@ def fibonacci(n):
     x2 = (1 - raiz_de_5)/2
     x1 = x1**n
     x2 = x2**n
-    v = x1 - x2
-    u = u*v
-    return int(u)
+    v = (x1 - x2)//raiz_de_5
+    return v
 
 print(fibonacci(2))
 

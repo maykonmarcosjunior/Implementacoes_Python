@@ -16,22 +16,26 @@ def dif_div_n_rec(xv, yv):
             temp = (A[i-1][j+1] - A[i-1][j])
             A[i][j] = temp / (xv[j+i] - xv[j])
         saida[i] = A[i][0]
-    return saida
+    return saida, A
 
 
 def Newton_dif_div(xv, yv, x):
     n = len(xv)
     saida = 0
-    DD = dif_div_n_rec(xv, yv)
+    DD, A = dif_div_n_rec(xv, yv)
     for i in range(n):
         termo = DD[i]
         for j in range(i):
             termo *= (x - xv[j])
         saida += termo
-    return saida
+    return saida, A
 
 
 xv, yv, x = [-3, -2, 1, 3], [-1, 2, -1, 10], 2
-print(Newton_dif_div(xv, yv, x))
+# print(Newton_dif_div(xv, yv, x))
 xv, yv, x = [-1, 0, 2], [4, 1, -1], 1
-print(Newton_dif_div(xv, yv, x))
+xv, yv, x = [-3, -2, 1, 3], [-1, 2, -1, 10], 0
+N, A = Newton_dif_div(xv, yv, x)
+for i in A:
+    print(i)
+print(N)

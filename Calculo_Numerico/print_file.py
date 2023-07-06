@@ -9,7 +9,7 @@ def printR(r, n):
     print("\n")
 
 
-def confere(A, b, x, n, indices=[], erro=0):
+def confere(A, b, x, n, indices=[]):
     if len(indices) != n:
         indices = [i for i in range(n)]
     r = [i for i in b]
@@ -26,7 +26,6 @@ def confere(A, b, x, n, indices=[], erro=0):
         r[indices[i]] -= temp
     print()
     printR(r, n)
-    print("erro =", erro)
 
 
 def printA(A, n):
@@ -68,3 +67,17 @@ def printar(A, b, x, flag0=0, o=[], flag1=0):
         confere(A, b, x, n, o)
     if flag1 == 1:
         printIndices(o, n)
+
+
+def print_com_erro(A, b, c, erro):
+    print("A =")
+
+    print(A[0])
+    print(A[1])
+
+    print("\nb =")
+    print(b)
+    print("\nc =")
+    print(c)
+    print("\nerro =")
+    print(erro)

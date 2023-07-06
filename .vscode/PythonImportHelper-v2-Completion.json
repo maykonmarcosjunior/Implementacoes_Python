@@ -346,7 +346,7 @@
         "kind": 2,
         "importPath": "Calculo_Numerico.ajuste_polinomial",
         "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "def h(x, k):\n    return x**k\ndef ajuste(x, y, M):\n    n = len(x)\n    A = [0]*(M+1)\n    b = [0]*(M+1)\n    g = [0]*n\n    for i in range(M+1):\n        A[i] = [0]*(M+1)\n        for k in range(n):",
+        "peekOfCode": "def h(x, k):\n    if (x == k == 0):\n        return 1\n    return x**k\ndef ajuste(x, y, M):\n    n = len(x)\n    A = [0]*(M+1)\n    b = [0]*(M+1)\n    g = [0]*n\n    for i in range(M+1):",
         "detail": "Calculo_Numerico.ajuste_polinomial",
         "documentation": {}
     },
@@ -364,7 +364,7 @@
         "kind": 5,
         "importPath": "Calculo_Numerico.ajuste_polinomial",
         "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "M = 1\nx = [1.3, 3.4, 5.1, 6.8, 8]\ny = [2, 5.2, 3.8, 6.1, 5.8]\n'''\nM = 1\nx = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,",
+        "peekOfCode": "M = 1\nx = [1.3, 3.4, 5.1, 6.8, 8]\ny = [2, 5.2, 3.8, 6.1, 5.8]\nx = [0, 20, 40, 60, 80, 100]\ny = [81.4, 77.7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\npf.print_com_erro(A, b, c, erro)",
         "detail": "Calculo_Numerico.ajuste_polinomial",
         "documentation": {}
     },
@@ -373,7 +373,7 @@
         "kind": 5,
         "importPath": "Calculo_Numerico.ajuste_polinomial",
         "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "x = [1.3, 3.4, 5.1, 6.8, 8]\ny = [2, 5.2, 3.8, 6.1, 5.8]\n'''\nM = 1\nx = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,\n    1.582, 1.993,   2.473,  2.503,",
+        "peekOfCode": "x = [1.3, 3.4, 5.1, 6.8, 8]\ny = [2, 5.2, 3.8, 6.1, 5.8]\nx = [0, 20, 40, 60, 80, 100]\ny = [81.4, 77.7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\npf.print_com_erro(A, b, c, erro)",
         "detail": "Calculo_Numerico.ajuste_polinomial",
         "documentation": {}
     },
@@ -382,16 +382,7 @@
         "kind": 5,
         "importPath": "Calculo_Numerico.ajuste_polinomial",
         "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "y = [2, 5.2, 3.8, 6.1, 5.8]\n'''\nM = 1\nx = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,\n    1.582, 1.993,   2.473,  2.503,\n    2.322]",
-        "detail": "Calculo_Numerico.ajuste_polinomial",
-        "documentation": {}
-    },
-    {
-        "label": "M",
-        "kind": 5,
-        "importPath": "Calculo_Numerico.ajuste_polinomial",
-        "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "M = 1\nx = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,\n    1.582, 1.993,   2.473,  2.503,\n    2.322]\n'''\nM = 1",
+        "peekOfCode": "y = [2, 5.2, 3.8, 6.1, 5.8]\nx = [0, 20, 40, 60, 80, 100]\ny = [81.4, 77.7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\npf.print_com_erro(A, b, c, erro)",
         "detail": "Calculo_Numerico.ajuste_polinomial",
         "documentation": {}
     },
@@ -400,25 +391,7 @@
         "kind": 5,
         "importPath": "Calculo_Numerico.ajuste_polinomial",
         "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "x = [1 + (0.2)*i for i in range(21)]\ny=[-1.945, -1.253, -1.140, -1.087,\n   -0.760, -0.682, -0.424, -0.012,\n   -0.190,  0.452,  0.337,  0.764,\n    0.532,  1.073,  1.286,  1.502,\n    1.582, 1.993,   2.473,  2.503,\n    2.322]\n'''\nM = 1\nx = [0, 20, 40, 60, 100]",
-        "detail": "Calculo_Numerico.ajuste_polinomial",
-        "documentation": {}
-    },
-    {
-        "label": "M",
-        "kind": 5,
-        "importPath": "Calculo_Numerico.ajuste_polinomial",
-        "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "M = 1\nx = [0, 20, 40, 60, 100]\ny = [81.4, 77, 7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\nprintar(A, b, c, erro)",
-        "detail": "Calculo_Numerico.ajuste_polinomial",
-        "documentation": {}
-    },
-    {
-        "label": "x",
-        "kind": 5,
-        "importPath": "Calculo_Numerico.ajuste_polinomial",
-        "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "x = [0, 20, 40, 60, 100]\ny = [81.4, 77, 7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\nprintar(A, b, c, erro)",
+        "peekOfCode": "x = [0, 20, 40, 60, 80, 100]\ny = [81.4, 77.7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\npf.print_com_erro(A, b, c, erro)",
         "detail": "Calculo_Numerico.ajuste_polinomial",
         "documentation": {}
     },
@@ -427,7 +400,7 @@
         "kind": 5,
         "importPath": "Calculo_Numerico.ajuste_polinomial",
         "description": "Calculo_Numerico.ajuste_polinomial",
-        "peekOfCode": "y = [81.4, 77, 7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\nprintar(A, b, c, erro)",
+        "peekOfCode": "y = [81.4, 77.7, 74.2, 72.4, 70.3, 68.8]\nA, b, c, erro = ajuste(x, y, M)\npf.print_com_erro(A, b, c, erro)",
         "detail": "Calculo_Numerico.ajuste_polinomial",
         "documentation": {}
     },
@@ -580,7 +553,7 @@
         "kind": 2,
         "importPath": "Calculo_Numerico.diferencas_divididas",
         "description": "Calculo_Numerico.diferencas_divididas",
-        "peekOfCode": "def dif_div_n_rec(xv, yv):\n    n = len(xv)\n    A = [[yv[i] for i in range(n + j*0)] for j in range(n)]\n    saida = [yv[0]]*n\n    for i in range(1, n):\n        for j in range(n-i):\n            temp = (A[i-1][j+1] - A[i-1][j])\n            A[i][j] = temp / (xv[j+i] - xv[j])\n        saida[i] = A[i][0]\n    return saida",
+        "peekOfCode": "def dif_div_n_rec(xv, yv):\n    n = len(xv)\n    A = [[yv[i] for i in range(n + j*0)] for j in range(n)]\n    saida = [yv[0]]*n\n    for i in range(1, n):\n        for j in range(n-i):\n            temp = (A[i-1][j+1] - A[i-1][j])\n            A[i][j] = temp / (xv[j+i] - xv[j])\n        saida[i] = A[i][0]\n    return saida, A",
         "detail": "Calculo_Numerico.diferencas_divididas",
         "documentation": {}
     },
@@ -589,7 +562,7 @@
         "kind": 2,
         "importPath": "Calculo_Numerico.diferencas_divididas",
         "description": "Calculo_Numerico.diferencas_divididas",
-        "peekOfCode": "def Newton_dif_div(xv, yv, x):\n    n = len(xv)\n    saida = 0\n    DD = dif_div_n_rec(xv, yv)\n    for i in range(n):\n        termo = DD[i]\n        for j in range(i):\n            termo *= (x - xv[j])\n        saida += termo\n    return saida",
+        "peekOfCode": "def Newton_dif_div(xv, yv, x):\n    n = len(xv)\n    saida = 0\n    DD, A = dif_div_n_rec(xv, yv)\n    for i in range(n):\n        termo = DD[i]\n        for j in range(i):\n            termo *= (x - xv[j])\n        saida += termo\n    return saida, A",
         "detail": "Calculo_Numerico.diferencas_divididas",
         "documentation": {}
     },
@@ -958,7 +931,7 @@
         "kind": 2,
         "importPath": "Calculo_Numerico.print_file",
         "description": "Calculo_Numerico.print_file",
-        "peekOfCode": "def printFloat(x):\n    print(\"%.5f\" % x, end=' ')\ndef printR(r, n):\n    print(\"r =\")\n    for i in range(n):\n        printFloat(r[i])\n    print(\"\\n\")\ndef confere(A, b, x, n, indices=[], erro=0):\n    if len(indices) != n:\n        indices = [i for i in range(n)]",
+        "peekOfCode": "def printFloat(x):\n    print(\"%.5f\" % x, end=' ')\ndef printR(r, n):\n    print(\"r =\")\n    for i in range(n):\n        printFloat(r[i])\n    print(\"\\n\")\ndef confere(A, b, x, n, indices=[]):\n    if len(indices) != n:\n        indices = [i for i in range(n)]",
         "detail": "Calculo_Numerico.print_file",
         "documentation": {}
     },
@@ -967,7 +940,7 @@
         "kind": 2,
         "importPath": "Calculo_Numerico.print_file",
         "description": "Calculo_Numerico.print_file",
-        "peekOfCode": "def printR(r, n):\n    print(\"r =\")\n    for i in range(n):\n        printFloat(r[i])\n    print(\"\\n\")\ndef confere(A, b, x, n, indices=[], erro=0):\n    if len(indices) != n:\n        indices = [i for i in range(n)]\n    r = [i for i in b]\n    print(\"conferindo:\")",
+        "peekOfCode": "def printR(r, n):\n    print(\"r =\")\n    for i in range(n):\n        printFloat(r[i])\n    print(\"\\n\")\ndef confere(A, b, x, n, indices=[]):\n    if len(indices) != n:\n        indices = [i for i in range(n)]\n    r = [i for i in b]\n    print(\"conferindo:\")",
         "detail": "Calculo_Numerico.print_file",
         "documentation": {}
     },
@@ -976,7 +949,7 @@
         "kind": 2,
         "importPath": "Calculo_Numerico.print_file",
         "description": "Calculo_Numerico.print_file",
-        "peekOfCode": "def confere(A, b, x, n, indices=[], erro=0):\n    if len(indices) != n:\n        indices = [i for i in range(n)]\n    r = [i for i in b]\n    print(\"conferindo:\")\n    for i in range(n-1, -1, -1):\n        temp = 0\n        for j in range(n-1, -1, -1):\n            temp += A[indices[i]][j]*x[j]\n        print(\"b[%d] =\" % i, end=' ')",
+        "peekOfCode": "def confere(A, b, x, n, indices=[]):\n    if len(indices) != n:\n        indices = [i for i in range(n)]\n    r = [i for i in b]\n    print(\"conferindo:\")\n    for i in range(n-1, -1, -1):\n        temp = 0\n        for j in range(n-1, -1, -1):\n            temp += A[indices[i]][j]*x[j]\n        print(\"b[%d] =\" % i, end=' ')",
         "detail": "Calculo_Numerico.print_file",
         "documentation": {}
     },
@@ -1021,7 +994,16 @@
         "kind": 2,
         "importPath": "Calculo_Numerico.print_file",
         "description": "Calculo_Numerico.print_file",
-        "peekOfCode": "def printar(A, b, x, flag0=0, o=[], flag1=0):\n    n = len(b)\n    printA(A, n)\n    printB(b, n)\n    printX(x, n)\n    if flag0 == 1:\n        confere(A, b, x, n, o)\n    if flag1 == 1:\n        printIndices(o, n)",
+        "peekOfCode": "def printar(A, b, x, flag0=0, o=[], flag1=0):\n    n = len(b)\n    printA(A, n)\n    printB(b, n)\n    printX(x, n)\n    if flag0 == 1:\n        confere(A, b, x, n, o)\n    if flag1 == 1:\n        printIndices(o, n)\ndef print_com_erro(A, b, c, erro):",
+        "detail": "Calculo_Numerico.print_file",
+        "documentation": {}
+    },
+    {
+        "label": "print_com_erro",
+        "kind": 2,
+        "importPath": "Calculo_Numerico.print_file",
+        "description": "Calculo_Numerico.print_file",
+        "peekOfCode": "def print_com_erro(A, b, c, erro):\n    print(\"A =\")\n    print(A[0])\n    print(A[1])\n    print(\"\\nb =\")\n    print(b)\n    print(\"\\nc =\")\n    print(c)\n    print(\"\\nerro =\")\n    print(erro)",
         "detail": "Calculo_Numerico.print_file",
         "documentation": {}
     },
@@ -1813,7 +1795,7 @@
         "kind": 2,
         "importPath": "Isolados.Euclides",
         "description": "Isolados.Euclides",
-        "peekOfCode": "def fibonacci(n):\n    raiz_de_5 = 5**(0.5)\n    u = 1/raiz_de_5\n    x1 = (1 + raiz_de_5)/2\n    x2 = (1 - raiz_de_5)/2\n    x1 = x1**n\n    x2 = x2**n\n    v = x1 - x2\n    u = u*v\n    return int(u)",
+        "peekOfCode": "def fibonacci(n):\n    raiz_de_5 = 5**(0.5)\n    u = 1/raiz_de_5\n    x1 = (1 + raiz_de_5)/2\n    x2 = (1 - raiz_de_5)/2\n    x1 = x1**n\n    x2 = x2**n\n    v = (x1 - x2)//raiz_de_5\n    return v\nprint(fibonacci(2))",
         "detail": "Isolados.Euclides",
         "documentation": {}
     },
@@ -1836,20 +1818,11 @@
         "documentation": {}
     },
     {
-        "label": "cd",
-        "kind": 5,
-        "importPath": "Isolados.cifra_de_cesar",
-        "description": "Isolados.cifra_de_cesar",
-        "peekOfCode": "cd = int(input())\nabcm = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\", \"a\", \"b\", \"c\"]\nabcd = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"]\nwhile True:\n    try:\n        m = input()\n        m = m.lower()\n        m = list(m)\n        for i in range(0, len(m)):\n            if cd == 0:",
-        "detail": "Isolados.cifra_de_cesar",
-        "documentation": {}
-    },
-    {
         "label": "abcm",
         "kind": 5,
         "importPath": "Isolados.cifra_de_cesar",
         "description": "Isolados.cifra_de_cesar",
-        "peekOfCode": "abcm = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\", \"a\", \"b\", \"c\"]\nabcd = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"]\nwhile True:\n    try:\n        m = input()\n        m = m.lower()\n        m = list(m)\n        for i in range(0, len(m)):\n            if cd == 0:\n                l = abcm.index(m[i])",
+        "peekOfCode": "abcm = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\", \"a\", \"b\", \"c\"]\nabcd = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"]\nseletor = [abcm, abcd]\ncd = int(input())\nwhile True:\n    try:\n        m = (input().lower()).split()\n        N = len(m)\n        for i in range(0, N):\n            l = seletor[cd].index(m[i])",
         "detail": "Isolados.cifra_de_cesar",
         "documentation": {}
     },
@@ -1858,7 +1831,25 @@
         "kind": 5,
         "importPath": "Isolados.cifra_de_cesar",
         "description": "Isolados.cifra_de_cesar",
-        "peekOfCode": "abcd = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"]\nwhile True:\n    try:\n        m = input()\n        m = m.lower()\n        m = list(m)\n        for i in range(0, len(m)):\n            if cd == 0:\n                l = abcm.index(m[i])\n                m[i] = abcm[l+3]",
+        "peekOfCode": "abcd = [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\", \"g\", \"h\", \"i\", \"j\", \"k\", \"l\", \"m\", \"n\", \"o\", \"p\", \"q\", \"r\", \"s\", \"t\", \"u\", \"v\", \"w\", \"x\", \"y\", \"z\"]\nseletor = [abcm, abcd]\ncd = int(input())\nwhile True:\n    try:\n        m = (input().lower()).split()\n        N = len(m)\n        for i in range(0, N):\n            l = seletor[cd].index(m[i])\n            m[i] = seletor[cd][l + 3 - 6*cd]",
+        "detail": "Isolados.cifra_de_cesar",
+        "documentation": {}
+    },
+    {
+        "label": "seletor",
+        "kind": 5,
+        "importPath": "Isolados.cifra_de_cesar",
+        "description": "Isolados.cifra_de_cesar",
+        "peekOfCode": "seletor = [abcm, abcd]\ncd = int(input())\nwhile True:\n    try:\n        m = (input().lower()).split()\n        N = len(m)\n        for i in range(0, N):\n            l = seletor[cd].index(m[i])\n            m[i] = seletor[cd][l + 3 - 6*cd]\n        print(\"\".join(m))",
+        "detail": "Isolados.cifra_de_cesar",
+        "documentation": {}
+    },
+    {
+        "label": "cd",
+        "kind": 5,
+        "importPath": "Isolados.cifra_de_cesar",
+        "description": "Isolados.cifra_de_cesar",
+        "peekOfCode": "cd = int(input())\nwhile True:\n    try:\n        m = (input().lower()).split()\n        N = len(m)\n        for i in range(0, N):\n            l = seletor[cd].index(m[i])\n            m[i] = seletor[cd][l + 3 - 6*cd]\n        print(\"\".join(m))\n    except EOFError:",
         "detail": "Isolados.cifra_de_cesar",
         "documentation": {}
     },
@@ -1912,7 +1903,7 @@
         "kind": 2,
         "importPath": "Isolados.produto_de_matrizes",
         "description": "Isolados.produto_de_matrizes",
-        "peekOfCode": "def produbool(a, b, c, d):\n    resultado = False\n    for i in range(len(a[b])):\n        m1 = True\n        m2 = True\n        if a[b][i] == 0:\n            m1 = False\n        if c[d][i] == 0:\n            m2= False\n        resultado = resultado or (m1 and m2)",
+        "peekOfCode": "def produbool(a, b, c, d):\n    resultado = 0\n    N = len(a[b])\n    for i in range(N):\n        resultado = resultado or (a[b][i] and c[d][i])\n    return resultado\ndef produlc(a, b, c, d):\n    resultado = 0\n    N = len(a[b])\n    for i in range(N):",
         "detail": "Isolados.produto_de_matrizes",
         "documentation": {}
     },
@@ -1921,7 +1912,7 @@
         "kind": 2,
         "importPath": "Isolados.produto_de_matrizes",
         "description": "Isolados.produto_de_matrizes",
-        "peekOfCode": "def produlc(a, b, c, d):\n    resultado = 0\n    for i in range(len(a[b])):\n        resultado += a[b][i] * c[d][i]\n    return resultado\noperacao = input()\nn = int(input())\nmat1 = [None]*n\nfor i in range(n):\n    mat1[i] = input().split()",
+        "peekOfCode": "def produlc(a, b, c, d):\n    resultado = 0\n    N = len(a[b])\n    for i in range(N):\n        resultado += a[b][i] * c[d][i]\n    return resultado\noperacao = input()\nn, m = (int(i) for i in input().split())\nmat1 = [None]*n\nfor i in range(n):",
         "detail": "Isolados.produto_de_matrizes",
         "documentation": {}
     },
@@ -1930,16 +1921,7 @@
         "kind": 5,
         "importPath": "Isolados.produto_de_matrizes",
         "description": "Isolados.produto_de_matrizes",
-        "peekOfCode": "operacao = input()\nn = int(input())\nmat1 = [None]*n\nfor i in range(n):\n    mat1[i] = input().split()\n    for j in range(len(mat1[i])):\n        mat1[i][j] = int(mat1[i][j])\nm = int(input())\nmat2 = [None]*m\nfor i in range(m):",
-        "detail": "Isolados.produto_de_matrizes",
-        "documentation": {}
-    },
-    {
-        "label": "n",
-        "kind": 5,
-        "importPath": "Isolados.produto_de_matrizes",
-        "description": "Isolados.produto_de_matrizes",
-        "peekOfCode": "n = int(input())\nmat1 = [None]*n\nfor i in range(n):\n    mat1[i] = input().split()\n    for j in range(len(mat1[i])):\n        mat1[i][j] = int(mat1[i][j])\nm = int(input())\nmat2 = [None]*m\nfor i in range(m):\n    mat2[i] = [None]*m",
+        "peekOfCode": "operacao = input()\nn, m = (int(i) for i in input().split())\nmat1 = [None]*n\nfor i in range(n):\n    mat1[i] = (int(j) for j in input().split())\nmat2 = [None]*m\nfor i in range(m):\n    mat2[i] = (int(j) for j in input().split())\nfor g in range(n):\n    for h in range(n):",
         "detail": "Isolados.produto_de_matrizes",
         "documentation": {}
     },
@@ -1948,16 +1930,7 @@
         "kind": 5,
         "importPath": "Isolados.produto_de_matrizes",
         "description": "Isolados.produto_de_matrizes",
-        "peekOfCode": "mat1 = [None]*n\nfor i in range(n):\n    mat1[i] = input().split()\n    for j in range(len(mat1[i])):\n        mat1[i][j] = int(mat1[i][j])\nm = int(input())\nmat2 = [None]*m\nfor i in range(m):\n    mat2[i] = [None]*m\nfor i in range(m):",
-        "detail": "Isolados.produto_de_matrizes",
-        "documentation": {}
-    },
-    {
-        "label": "m",
-        "kind": 5,
-        "importPath": "Isolados.produto_de_matrizes",
-        "description": "Isolados.produto_de_matrizes",
-        "peekOfCode": "m = int(input())\nmat2 = [None]*m\nfor i in range(m):\n    mat2[i] = [None]*m\nfor i in range(m):\n    v = input().split()\n    for j in range(m):\n        mat2[j][i] = int(v[j])\nfor g in range(n):\n    for h in range(n):",
+        "peekOfCode": "mat1 = [None]*n\nfor i in range(n):\n    mat1[i] = (int(j) for j in input().split())\nmat2 = [None]*m\nfor i in range(m):\n    mat2[i] = (int(j) for j in input().split())\nfor g in range(n):\n    for h in range(n):\n        if operacao == \"bool\":\n            print(produbool(mat1, g, mat2, h), end=' ')",
         "detail": "Isolados.produto_de_matrizes",
         "documentation": {}
     },
@@ -1966,7 +1939,7 @@
         "kind": 5,
         "importPath": "Isolados.produto_de_matrizes",
         "description": "Isolados.produto_de_matrizes",
-        "peekOfCode": "mat2 = [None]*m\nfor i in range(m):\n    mat2[i] = [None]*m\nfor i in range(m):\n    v = input().split()\n    for j in range(m):\n        mat2[j][i] = int(v[j])\nfor g in range(n):\n    for h in range(n):\n        if operacao == \"bool\":",
+        "peekOfCode": "mat2 = [None]*m\nfor i in range(m):\n    mat2[i] = (int(j) for j in input().split())\nfor g in range(n):\n    for h in range(n):\n        if operacao == \"bool\":\n            print(produbool(mat1, g, mat2, h), end=' ')\n        else:\n            print(produlc(mat1, g, mat2, h), end=' ')\n    print()",
         "detail": "Isolados.produto_de_matrizes",
         "documentation": {}
     },
