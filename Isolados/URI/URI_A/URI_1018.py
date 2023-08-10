@@ -5,5 +5,5 @@ valor = int(input())
 print(valor)
 for i in notas:
     resto = valor//i
-    valor -= i*resto
+    valor %= i
     print("%d nota(s) de R$ %d,00" % (resto, i))
