@@ -1791,6 +1791,96 @@
         "documentation": {}
     },
     {
+        "label": "pi",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1011",
+        "description": "Isolados.URI.URI_1011",
+        "peekOfCode": "pi = 3.14159\nR = float(input())\nesfera = (R**3)*pi*(4/3)\nprint(\"VOLUME = %.3f\" % (esfera))",
+        "detail": "Isolados.URI.URI_1011",
+        "documentation": {}
+    },
+    {
+        "label": "R",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1011",
+        "description": "Isolados.URI.URI_1011",
+        "peekOfCode": "R = float(input())\nesfera = (R**3)*pi*(4/3)\nprint(\"VOLUME = %.3f\" % (esfera))",
+        "detail": "Isolados.URI.URI_1011",
+        "documentation": {}
+    },
+    {
+        "label": "esfera",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1011",
+        "description": "Isolados.URI.URI_1011",
+        "peekOfCode": "esfera = (R**3)*pi*(4/3)\nprint(\"VOLUME = %.3f\" % (esfera))",
+        "detail": "Isolados.URI.URI_1011",
+        "documentation": {}
+    },
+    {
+        "label": "print(\"VOLUME",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1011",
+        "description": "Isolados.URI.URI_1011",
+        "peekOfCode": "print(\"VOLUME = %.3f\" % (esfera))",
+        "detail": "Isolados.URI.URI_1011",
+        "documentation": {}
+    },
+    {
+        "label": "distancia",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1014",
+        "description": "Isolados.URI.URI_1014",
+        "peekOfCode": "distancia = int(input())\ngasto = float(input())\nrendimento = distancia/gasto\nprint(\"%.3f km/l\" % rendimento)",
+        "detail": "Isolados.URI.URI_1014",
+        "documentation": {}
+    },
+    {
+        "label": "gasto",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1014",
+        "description": "Isolados.URI.URI_1014",
+        "peekOfCode": "gasto = float(input())\nrendimento = distancia/gasto\nprint(\"%.3f km/l\" % rendimento)",
+        "detail": "Isolados.URI.URI_1014",
+        "documentation": {}
+    },
+    {
+        "label": "rendimento",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1014",
+        "description": "Isolados.URI.URI_1014",
+        "peekOfCode": "rendimento = distancia/gasto\nprint(\"%.3f km/l\" % rendimento)",
+        "detail": "Isolados.URI.URI_1014",
+        "documentation": {}
+    },
+    {
+        "label": "distancia",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1015",
+        "description": "Isolados.URI.URI_1015",
+        "peekOfCode": "distancia = ((x2 - x1)**2 + (y2 - y1)**2)**(0.5)\nprint(\"%.4f\" % (distancia))",
+        "detail": "Isolados.URI.URI_1015",
+        "documentation": {}
+    },
+    {
+        "label": "notas",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1018",
+        "description": "Isolados.URI.URI_1018",
+        "peekOfCode": "notas = [100, 50, 20, 10, 5, 2, 1]\nvalor = int(input())\nprint(valor)\nfor i in notas:\n    resto = valor//i\n    valor -= i*resto\n    print(\"%d nota(s) de R$ %d,00\" % (resto, i))",
+        "detail": "Isolados.URI.URI_1018",
+        "documentation": {}
+    },
+    {
+        "label": "valor",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_1018",
+        "description": "Isolados.URI.URI_1018",
+        "peekOfCode": "valor = int(input())\nprint(valor)\nfor i in notas:\n    resto = valor//i\n    valor -= i*resto\n    print(\"%d nota(s) de R$ %d,00\" % (resto, i))",
+        "detail": "Isolados.URI.URI_1018",
+        "documentation": {}
+    },
+    {
         "label": "fibonacci",
         "kind": 2,
         "importPath": "Isolados.Euclides",
