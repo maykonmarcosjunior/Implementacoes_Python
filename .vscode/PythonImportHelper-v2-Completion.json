@@ -1876,7 +1876,16 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_1018",
         "description": "Isolados.URI.URI_A.URI_1018",
-        "peekOfCode": "notas = [100, 50, 20, 10, 5, 2, 1]\nvalor = int(input())\nprint(valor)\nfor i in notas:\n    resto = valor//i\n    valor %= i\n    print(\"%d nota(s) de R$ %d,00\" % (resto, i))",
+        "peekOfCode": "notas = [100, 50, 20, 10, 5, 2, 1]\nsaida = input()\nvalor = int(saida)\nfor i in notas:\n    resto = valor//i\n    valor %= i\n    saida += (\"%d nota(s) de R$ %d,00\\n\" % (resto, i))\nprint(saida)",
+        "detail": "Isolados.URI.URI_A.URI_1018",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_A.URI_1018",
+        "description": "Isolados.URI.URI_A.URI_1018",
+        "peekOfCode": "saida = input()\nvalor = int(saida)\nfor i in notas:\n    resto = valor//i\n    valor %= i\n    saida += (\"%d nota(s) de R$ %d,00\\n\" % (resto, i))\nprint(saida)",
         "detail": "Isolados.URI.URI_A.URI_1018",
         "documentation": {}
     },
@@ -1885,7 +1894,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_1018",
         "description": "Isolados.URI.URI_A.URI_1018",
-        "peekOfCode": "valor = int(input())\nprint(valor)\nfor i in notas:\n    resto = valor//i\n    valor %= i\n    print(\"%d nota(s) de R$ %d,00\" % (resto, i))",
+        "peekOfCode": "valor = int(saida)\nfor i in notas:\n    resto = valor//i\n    valor %= i\n    saida += (\"%d nota(s) de R$ %d,00\\n\" % (resto, i))\nprint(saida)",
         "detail": "Isolados.URI.URI_A.URI_1018",
         "documentation": {}
     },
@@ -1903,7 +1912,16 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_1024",
         "description": "Isolados.URI.URI_A.URI_1024",
-        "peekOfCode": "casos = int(input())\nfor _ in range(casos):\n    print(encripty_str(input()))",
+        "peekOfCode": "casos = int(input())\nsaida = \"\"\nfor _ in range(casos):\n    saida += (encripty_str(input())) + \"\\n\"\nprint(saida)",
+        "detail": "Isolados.URI.URI_A.URI_1024",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_A.URI_1024",
+        "description": "Isolados.URI.URI_A.URI_1024",
+        "peekOfCode": "saida = \"\"\nfor _ in range(casos):\n    saida += (encripty_str(input())) + \"\\n\"\nprint(saida)",
         "detail": "Isolados.URI.URI_A.URI_1024",
         "documentation": {}
     },
@@ -1912,7 +1930,16 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_1091",
         "description": "Isolados.URI.URI_A.URI_1091",
-        "peekOfCode": "saidas = [\"divisa\\n\", \"SO\\n\", \"SE\\n\", \"NO\\n\", \"NE\\n\"]\nwhile True:\n    consultas = int(input())\n    if consultas == 0:\n        break\n    n, m = input().split()\n    n, m = int(n), int(m)\n    output = \"\"\n    for _ in range(consultas):\n        coord = input().split()",
+        "peekOfCode": "saidas = [\"divisa\\n\", \"SO\\n\", \"SE\\n\", \"NO\\n\", \"NE\\n\"]\noutput = \"\"\nwhile True:\n    consultas = int(input())\n    if consultas == 0:\n        break\n    n, m = input().split()\n    n, m = int(n), int(m)\n    for _ in range(consultas):\n        x, y = [int(i) for i in input().split()]",
+        "detail": "Isolados.URI.URI_A.URI_1091",
+        "documentation": {}
+    },
+    {
+        "label": "output",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_A.URI_1091",
+        "description": "Isolados.URI.URI_A.URI_1091",
+        "peekOfCode": "output = \"\"\nwhile True:\n    consultas = int(input())\n    if consultas == 0:\n        break\n    n, m = input().split()\n    n, m = int(n), int(m)\n    for _ in range(consultas):\n        x, y = [int(i) for i in input().split()]\n        # divisa",
         "detail": "Isolados.URI.URI_A.URI_1091",
         "documentation": {}
     },
@@ -1944,11 +1971,20 @@
         "documentation": {}
     },
     {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_A.URI_1103",
+        "description": "Isolados.URI.URI_A.URI_1103",
+        "peekOfCode": "saida = \"\"\nwhile True:\n    entr = input().split()\n    if entr[0] == entr[1] == entr[2] == entr[3] == '0':\n        break\n    t1 = int(entr[0])*60 + int(entr[1])\n    t2 = int(entr[2])*60 + int(entr[3])\n    saida += str((t2 - t1) % 1440)\nprint(saida)",
+        "detail": "Isolados.URI.URI_A.URI_1103",
+        "documentation": {}
+    },
+    {
         "label": "const_limiar",
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_1129",
         "description": "Isolados.URI.URI_A.URI_1129",
-        "peekOfCode": "const_limiar = 127\nconst_A = ord(\"A\")\nconst_ast = ord(\"*\")\nwhile True:\n    questoes = int(input())\n    if questoes == 0:\n        break\n    for _ in range(questoes):\n        pergunta = input().split()\n        cont = 0",
+        "peekOfCode": "const_limiar = 127\nconst_A = ord(\"A\")\nconst_ast = ord(\"*\")\nsaida = \"\"\nwhile True:\n    questoes = int(input())\n    if questoes == 0:\n        break\n    for _ in range(questoes):\n        pergunta = input().split()",
         "detail": "Isolados.URI.URI_A.URI_1129",
         "documentation": {}
     },
@@ -1957,7 +1993,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_1129",
         "description": "Isolados.URI.URI_A.URI_1129",
-        "peekOfCode": "const_A = ord(\"A\")\nconst_ast = ord(\"*\")\nwhile True:\n    questoes = int(input())\n    if questoes == 0:\n        break\n    for _ in range(questoes):\n        pergunta = input().split()\n        cont = 0\n        resp = [0, const_ast]",
+        "peekOfCode": "const_A = ord(\"A\")\nconst_ast = ord(\"*\")\nsaida = \"\"\nwhile True:\n    questoes = int(input())\n    if questoes == 0:\n        break\n    for _ in range(questoes):\n        pergunta = input().split()\n        cont = 0",
         "detail": "Isolados.URI.URI_A.URI_1129",
         "documentation": {}
     },
@@ -1966,8 +2002,26 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_1129",
         "description": "Isolados.URI.URI_A.URI_1129",
-        "peekOfCode": "const_ast = ord(\"*\")\nwhile True:\n    questoes = int(input())\n    if questoes == 0:\n        break\n    for _ in range(questoes):\n        pergunta = input().split()\n        cont = 0\n        resp = [0, const_ast]\n        opcoes = len(pergunta)",
+        "peekOfCode": "const_ast = ord(\"*\")\nsaida = \"\"\nwhile True:\n    questoes = int(input())\n    if questoes == 0:\n        break\n    for _ in range(questoes):\n        pergunta = input().split()\n        cont = 0\n        resp = [0, const_ast]",
         "detail": "Isolados.URI.URI_A.URI_1129",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_A.URI_1129",
+        "description": "Isolados.URI.URI_A.URI_1129",
+        "peekOfCode": "saida = \"\"\nwhile True:\n    questoes = int(input())\n    if questoes == 0:\n        break\n    for _ in range(questoes):\n        pergunta = input().split()\n        cont = 0\n        resp = [0, const_ast]\n        opcoes = len(pergunta)",
+        "detail": "Isolados.URI.URI_A.URI_1129",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_A.URI_1387",
+        "description": "Isolados.URI.URI_A.URI_1387",
+        "peekOfCode": "saida = \"\"\nwhile True:\n    e, r = input().split()\n    if e == r == '0':\n        break\n    saida += str(int(e) + int(r))\nprint(saida)",
+        "detail": "Isolados.URI.URI_A.URI_1387",
         "documentation": {}
     },
     {
@@ -1975,7 +2029,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_2187",
         "description": "Isolados.URI.URI_A.URI_2187",
-        "peekOfCode": "notas = {50: 0, 10: 0, 5: 0, 1: 0}\nteste = 1\nwhile True:\n    valor = int(input())\n    if valor == 0:\n        break\n    print(\"Teste\", teste)\n    notas[50] = notas[10] = 0\n    notas[5] = notas[1] = 0\n    for i in notas.keys():",
+        "peekOfCode": "notas = {50: 0, 10: 0, 5: 0, 1: 0}\nteste = 1\nsaida = \"\"\nwhile True:\n    valor = int(input())\n    if valor == 0:\n        break\n    saida += (\"Teste %d\\n\" % teste)\n    teste += 1\n    notas[50] = notas[10] = 0",
         "detail": "Isolados.URI.URI_A.URI_2187",
         "documentation": {}
     },
@@ -1984,7 +2038,16 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_2187",
         "description": "Isolados.URI.URI_A.URI_2187",
-        "peekOfCode": "teste = 1\nwhile True:\n    valor = int(input())\n    if valor == 0:\n        break\n    print(\"Teste\", teste)\n    notas[50] = notas[10] = 0\n    notas[5] = notas[1] = 0\n    for i in notas.keys():\n        notas[i] = valor//i",
+        "peekOfCode": "teste = 1\nsaida = \"\"\nwhile True:\n    valor = int(input())\n    if valor == 0:\n        break\n    saida += (\"Teste %d\\n\" % teste)\n    teste += 1\n    notas[50] = notas[10] = 0\n    notas[5] = notas[1] = 0",
+        "detail": "Isolados.URI.URI_A.URI_2187",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_A.URI_2187",
+        "description": "Isolados.URI.URI_A.URI_2187",
+        "peekOfCode": "saida = \"\"\nwhile True:\n    valor = int(input())\n    if valor == 0:\n        break\n    saida += (\"Teste %d\\n\" % teste)\n    teste += 1\n    notas[50] = notas[10] = 0\n    notas[5] = notas[1] = 0\n    for i in notas.keys():",
         "detail": "Isolados.URI.URI_A.URI_2187",
         "documentation": {}
     },
@@ -1993,7 +2056,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_2392",
         "description": "Isolados.URI.URI_A.URI_2392",
-        "peekOfCode": "saida = [0]*(Npedras + 1)\nfor i in range(Nsapos):\n    pedraI, pulo = input().split()\n    pedraI, pulo = int(pedraI), int(pulo)\n    saida[pedraI] = 1\n    for j in range(pedraI, Npedras+1, pulo):\n        saida[j] = 1\n    for j in range(pedraI, 0, -pulo):\n        saida[j] = 1\nfor i in range(1, Npedras+1):",
+        "peekOfCode": "saida = [0]*(Npedras + 1)\nfor i in range(Nsapos):\n    pedraI, pulo = [int(i) for i in input().split()]\n    saida[pedraI] = 1\n    for j in range(pedraI, Npedras+1, pulo):\n        saida[j] = 1\n    for j in range(pedraI, 0, -pulo):\n        saida[j] = 1\nfor i in range(1, Npedras+1):\n    print(saida[i])",
         "detail": "Isolados.URI.URI_A.URI_2392",
         "documentation": {}
     },
@@ -2047,7 +2110,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_2424",
         "description": "Isolados.URI.URI_A.URI_2424",
-        "peekOfCode": "limite_x = 432\nlimite_y = 468\nsaida = [\"fora\", \"dentro\"]\nentr = input().split()\nx, y = int(entr[0]), int(entr[1])\nc1 = x >= 0 and x <= limite_x\nc1 = c1 and y >= 0 and y <= limite_y\nprint(saida[int(c1)])",
+        "peekOfCode": "limite_x = 432\nlimite_y = 468\nsaida = [\"fora\", \"dentro\"]\nx, y = [int(i) for i in input().split()]\nc1 = x >= 0 and x <= limite_x\nc1 = c1 and y >= 0 and y <= limite_y\nprint(saida[int(c1)])",
         "detail": "Isolados.URI.URI_A.URI_2424",
         "documentation": {}
     },
@@ -2056,7 +2119,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_2424",
         "description": "Isolados.URI.URI_A.URI_2424",
-        "peekOfCode": "limite_y = 468\nsaida = [\"fora\", \"dentro\"]\nentr = input().split()\nx, y = int(entr[0]), int(entr[1])\nc1 = x >= 0 and x <= limite_x\nc1 = c1 and y >= 0 and y <= limite_y\nprint(saida[int(c1)])",
+        "peekOfCode": "limite_y = 468\nsaida = [\"fora\", \"dentro\"]\nx, y = [int(i) for i in input().split()]\nc1 = x >= 0 and x <= limite_x\nc1 = c1 and y >= 0 and y <= limite_y\nprint(saida[int(c1)])",
         "detail": "Isolados.URI.URI_A.URI_2424",
         "documentation": {}
     },
@@ -2065,16 +2128,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_2424",
         "description": "Isolados.URI.URI_A.URI_2424",
-        "peekOfCode": "saida = [\"fora\", \"dentro\"]\nentr = input().split()\nx, y = int(entr[0]), int(entr[1])\nc1 = x >= 0 and x <= limite_x\nc1 = c1 and y >= 0 and y <= limite_y\nprint(saida[int(c1)])",
-        "detail": "Isolados.URI.URI_A.URI_2424",
-        "documentation": {}
-    },
-    {
-        "label": "entr",
-        "kind": 5,
-        "importPath": "Isolados.URI.URI_A.URI_2424",
-        "description": "Isolados.URI.URI_A.URI_2424",
-        "peekOfCode": "entr = input().split()\nx, y = int(entr[0]), int(entr[1])\nc1 = x >= 0 and x <= limite_x\nc1 = c1 and y >= 0 and y <= limite_y\nprint(saida[int(c1)])",
+        "peekOfCode": "saida = [\"fora\", \"dentro\"]\nx, y = [int(i) for i in input().split()]\nc1 = x >= 0 and x <= limite_x\nc1 = c1 and y >= 0 and y <= limite_y\nprint(saida[int(c1)])",
         "detail": "Isolados.URI.URI_A.URI_2424",
         "documentation": {}
     },

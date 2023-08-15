@@ -2,6 +2,7 @@
 const_limiar = 127
 const_A = ord("A")
 const_ast = ord("*")
+saida = ""
 while True:
     questoes = int(input())
     if questoes == 0:
@@ -15,4 +16,5 @@ while True:
             cond = int(int(pergunta[i]) <= const_limiar)
             cont += cond
             resp[0] += (const_A + i)*cond
-        print(chr(resp[cont != 1]))
+        saida += (chr(resp[cont != 1])) + "\n"
+print(saida)

@@ -13,5 +13,7 @@ def encripty_str(string0):
 
 
 casos = int(input())
+saida = ""
 for _ in range(casos):
-    print(encripty_str(input()))
+    saida += (encripty_str(input())) + "\n"
+print(saida)
