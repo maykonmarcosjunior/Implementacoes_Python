@@ -126,6 +126,15 @@
         "documentation": {}
     },
     {
+        "label": "bisect",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "bisect",
+        "description": "bisect",
+        "detail": "bisect",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
@@ -1903,7 +1912,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_1091",
         "description": "Isolados.URI.URI_A.URI_1091",
-        "peekOfCode": "saidas = [\"divisa\", \"SO\", \"SE\", \"NO\", \"NE\"]\nwhile True:\n    consultas = int(input())\n    if consultas == 0:\n        break\n    n, m = input().split()\n    n, m = int(n), int(m)\n    for _ in range(consultas):\n        coord = input().split()\n        x = int(coord[0])",
+        "peekOfCode": "saidas = [\"divisa\\n\", \"SO\\n\", \"SE\\n\", \"NO\\n\", \"NE\\n\"]\nwhile True:\n    consultas = int(input())\n    if consultas == 0:\n        break\n    n, m = input().split()\n    n, m = int(n), int(m)\n    output = \"\"\n    for _ in range(consultas):\n        coord = input().split()",
         "detail": "Isolados.URI.URI_A.URI_1091",
         "documentation": {}
     },
@@ -2085,6 +2094,24 @@
         "description": "Isolados.URI.URI_A.URI_2424",
         "peekOfCode": "c1 = c1 and y >= 0 and y <= limite_y\nprint(saida[int(c1)])",
         "detail": "Isolados.URI.URI_A.URI_2424",
+        "documentation": {}
+    },
+    {
+        "label": "caso",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1025",
+        "description": "Isolados.URI.URI_B.URI_1025",
+        "peekOfCode": "caso = 1\nsaida = \"\"\nwhile True:\n    Npecas, Nquestions = (int(i) for i in input().split())\n    if Npecas == Nquestions == 0:\n        break\n    Marbles = []\n    for i in range(Npecas):\n        N = int(input())\n        bisect.insort(Marbles, N)",
+        "detail": "Isolados.URI.URI_B.URI_1025",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1025",
+        "description": "Isolados.URI.URI_B.URI_1025",
+        "peekOfCode": "saida = \"\"\nwhile True:\n    Npecas, Nquestions = (int(i) for i in input().split())\n    if Npecas == Nquestions == 0:\n        break\n    Marbles = []\n    for i in range(Npecas):\n        N = int(input())\n        bisect.insort(Marbles, N)\n    saida += (\"CASE# %d:\\n\" % (caso))",
+        "detail": "Isolados.URI.URI_B.URI_1025",
         "documentation": {}
     },
     {
