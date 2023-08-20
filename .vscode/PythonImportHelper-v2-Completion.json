@@ -2169,6 +2169,105 @@
         "documentation": {}
     },
     {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1062",
+        "description": "Isolados.URI.URI_B.URI_1062",
+        "peekOfCode": "saida = \"\"\nwhile True:\n    Nvagoes = int(input())  # Número de vagões\n    if not Nvagoes:\n        break  # Fim da entrada\n    while True:\n        perm = input()\n        if perm == \"0\":\n            saida += \"\\n\"\n            break",
+        "detail": "Isolados.URI.URI_B.URI_1062",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1063",
+        "description": "Isolados.URI.URI_B.URI_1063",
+        "peekOfCode": "saida = \"\"\nwhile True:\n    Nvagoes = int(input())  # Número de vagões\n    if not Nvagoes:\n        break  # Fim da entrada\n    ordem_a = input().split()\n    ordem_esperada = input().split()\n    stack = []\n    ordem_b = []\n    for vagao in ordem_a:",
+        "detail": "Isolados.URI.URI_B.URI_1063",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1068",
+        "description": "Isolados.URI.URI_B.URI_1068",
+        "peekOfCode": "saida = \"\"\nwhile True:\n    try:\n        eq = input()\n        stack = 0\n        for char in eq:\n            if char == \"(\":\n                stack += 1\n            elif char == \")\":\n                stack -= 1",
+        "detail": "Isolados.URI.URI_B.URI_1068",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1069",
+        "description": "Isolados.URI.URI_B.URI_1069",
+        "peekOfCode": "saida = ''\nNtestes = int(input())\nfor _ in range(Ntestes):\n    teste = input()\n    diamantes = 0\n    stack = 0\n    for i in teste:\n        if i == \"<\":\n            stack += 1\n        # se fechar o diamante",
+        "detail": "Isolados.URI.URI_B.URI_1069",
+        "documentation": {}
+    },
+    {
+        "label": "Ntestes",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1069",
+        "description": "Isolados.URI.URI_B.URI_1069",
+        "peekOfCode": "Ntestes = int(input())\nfor _ in range(Ntestes):\n    teste = input()\n    diamantes = 0\n    stack = 0\n    for i in teste:\n        if i == \"<\":\n            stack += 1\n        # se fechar o diamante\n        elif i == \">\" and stack:",
+        "detail": "Isolados.URI.URI_B.URI_1069",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1110",
+        "description": "Isolados.URI.URI_B.URI_1110",
+        "peekOfCode": "saida = []\nwhile True:\n    Ncartas = int(input())\n    if not Ncartas:\n        break\n    pilha = [i for i in range(Ncartas, 0, -1)]\n    descarte = []\n    while len(pilha) > 1:\n        descarte.append(str(pilha.pop()))\n        pilha.insert(0, pilha.pop())",
+        "detail": "Isolados.URI.URI_B.URI_1110",
+        "documentation": {}
+    },
+    {
+        "label": "Nodo",
+        "kind": 6,
+        "importPath": "Isolados.URI.URI_B.URI_1195",
+        "description": "Isolados.URI.URI_B.URI_1195",
+        "peekOfCode": "class Nodo:\n    def __init__(self, valor: int):\n        self.valor = valor\n        self.left = None\n        self.right = None\n    def insere(self, filho):\n        if filho.valor > self.valor:\n            if self.right is None:\n                self.right = filho\n            else:",
+        "detail": "Isolados.URI.URI_B.URI_1195",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1195",
+        "description": "Isolados.URI.URI_B.URI_1195",
+        "peekOfCode": "saida = []\nNcasos = int(input())\nfor caso in range(1, Ncasos + 1):\n    saida.append(\"Case %d:\\n\" % caso)\n    Nnodos = int(input())\n    nodos = [Nodo(int(i)) for i in input().split()]\n    head = nodos[0]\n    for i in nodos[1:]:\n        head.insere(i)\n    orders = ['Pre.: ', 'In..: ', 'Post: ']",
+        "detail": "Isolados.URI.URI_B.URI_1195",
+        "documentation": {}
+    },
+    {
+        "label": "Ncasos",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1195",
+        "description": "Isolados.URI.URI_B.URI_1195",
+        "peekOfCode": "Ncasos = int(input())\nfor caso in range(1, Ncasos + 1):\n    saida.append(\"Case %d:\\n\" % caso)\n    Nnodos = int(input())\n    nodos = [Nodo(int(i)) for i in input().split()]\n    head = nodos[0]\n    for i in nodos[1:]:\n        head.insere(i)\n    orders = ['Pre.: ', 'In..: ', 'Post: ']\n    for order in orders:",
+        "detail": "Isolados.URI.URI_B.URI_1195",
+        "documentation": {}
+    },
+    {
+        "label": "saida",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1256",
+        "description": "Isolados.URI.URI_B.URI_1256",
+        "peekOfCode": "saida = \"\"\nNcasos = int(input())\nfor caso in range(Ncasos):\n    Nenderecos, Nchaves = (int(i) for i in input().split())\n    chaves = input().split()\n    tabela = [[str(i)] for i in range(Nenderecos)]\n    for i in chaves:\n        tabela[int(i) % Nenderecos].append(i)\n    if caso:\n        saida += \"\\n\"",
+        "detail": "Isolados.URI.URI_B.URI_1256",
+        "documentation": {}
+    },
+    {
+        "label": "Ncasos",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1256",
+        "description": "Isolados.URI.URI_B.URI_1256",
+        "peekOfCode": "Ncasos = int(input())\nfor caso in range(Ncasos):\n    Nenderecos, Nchaves = (int(i) for i in input().split())\n    chaves = input().split()\n    tabela = [[str(i)] for i in range(Nenderecos)]\n    for i in chaves:\n        tabela[int(i) % Nenderecos].append(i)\n    if caso:\n        saida += \"\\n\"\n    for i in tabela:",
+        "detail": "Isolados.URI.URI_B.URI_1256",
+        "documentation": {}
+    },
+    {
         "label": "fibonacci",
         "kind": 2,
         "importPath": "Isolados.Euclides",
