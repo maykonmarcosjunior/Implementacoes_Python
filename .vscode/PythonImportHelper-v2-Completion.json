@@ -135,6 +135,14 @@
         "documentation": {}
     },
     {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
@@ -2265,6 +2273,204 @@
         "description": "Isolados.URI.URI_B.URI_1256",
         "peekOfCode": "Ncasos = int(input())\nfor caso in range(Ncasos):\n    Nenderecos, Nchaves = (int(i) for i in input().split())\n    chaves = input().split()\n    tabela = [[str(i)] for i in range(Nenderecos)]\n    for i in chaves:\n        tabela[int(i) % Nenderecos].append(i)\n    if caso:\n        saida += \"\\n\"\n    for i in tabela:",
         "detail": "Isolados.URI.URI_B.URI_1256",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_1439",
+        "description": "Isolados.URI.URI_B.URI_1439",
+        "peekOfCode": "def main():\n    while True:\n        P, M, N = map(int, input().split())\n        if P == 0 and M == 0 and N == 0:\n            break\n        players = [[] for _ in range(P)]\n        for i in range(P * M):\n            value, suit = input().split()\n            players[(i // M) % P].append((int(value), suit))\n        initial_card = input().split()",
+        "detail": "Isolados.URI.URI_B.URI_1439",
+        "documentation": {}
+    },
+    {
+        "label": "get_next_player",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_1439",
+        "description": "Isolados.URI.URI_B.URI_1439",
+        "peekOfCode": "def get_next_player(current_player, direction, num_players):\n    if direction == 'clockwise':\n        return (current_player + 1) % num_players\n    else:\n        return (current_player - 1 + num_players) % num_players\nmain()",
+        "detail": "Isolados.URI.URI_B.URI_1439",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "kind": 6,
+        "importPath": "Isolados.URI.URI_B.URI_1466",
+        "description": "Isolados.URI.URI_B.URI_1466",
+        "peekOfCode": "class Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\ndef insert(root, value):\n    if root is None:\n        return Node(value)\n    if value < root.value:\n        root.left = insert(root.left, value)",
+        "detail": "Isolados.URI.URI_B.URI_1466",
+        "documentation": {}
+    },
+    {
+        "label": "insert",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_1466",
+        "description": "Isolados.URI.URI_B.URI_1466",
+        "peekOfCode": "def insert(root, value):\n    if root is None:\n        return Node(value)\n    if value < root.value:\n        root.left = insert(root.left, value)\n    else:\n        root.right = insert(root.right, value)\n    return root\ndef print_bfs(root):\n    if root is None:",
+        "detail": "Isolados.URI.URI_B.URI_1466",
+        "documentation": {}
+    },
+    {
+        "label": "print_bfs",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_1466",
+        "description": "Isolados.URI.URI_B.URI_1466",
+        "peekOfCode": "def print_bfs(root):\n    if root is None:\n        return\n    queue = [root]\n    saida = \"\"\n    while queue:\n        current = queue.pop(0)\n        saida += str(current.value) + \" \"\n        if current.left:\n            queue.append(current.left)",
+        "detail": "Isolados.URI.URI_B.URI_1466",
+        "documentation": {}
+    },
+    {
+        "label": "num_cases",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_1466",
+        "description": "Isolados.URI.URI_B.URI_1466",
+        "peekOfCode": "num_cases = int(input())\nfor case in range(1, num_cases + 1):\n    n = int(input())\n    values = list(map(int, input().split()))\n    root = None\n    for value in values:\n        root = insert(root, value)\n    print(f\"Case {case}:\")\n    print_bfs(root)",
+        "detail": "Isolados.URI.URI_B.URI_1466",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2312",
+        "description": "Isolados.URI.URI_B.URI_2312",
+        "peekOfCode": "n = int(input())\ncountries = []\nfor _ in range(n):\n    name, gold, silver, bronze = input().split()\n    countries.append((name, int(gold), int(silver), int(bronze)))\ncountries.sort(key=lambda x: (-x[1], -x[2], -x[3], x[0]))\nfor country in countries:\n    name, gold, silver, bronze = country\n    print(f\"{name} {gold} {silver} {bronze}\")",
+        "detail": "Isolados.URI.URI_B.URI_2312",
+        "documentation": {}
+    },
+    {
+        "label": "countries",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2312",
+        "description": "Isolados.URI.URI_B.URI_2312",
+        "peekOfCode": "countries = []\nfor _ in range(n):\n    name, gold, silver, bronze = input().split()\n    countries.append((name, int(gold), int(silver), int(bronze)))\ncountries.sort(key=lambda x: (-x[1], -x[2], -x[3], x[0]))\nfor country in countries:\n    name, gold, silver, bronze = country\n    print(f\"{name} {gold} {silver} {bronze}\")",
+        "detail": "Isolados.URI.URI_B.URI_2312",
+        "documentation": {}
+    },
+    {
+        "label": "is_well_defined",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_2406",
+        "description": "Isolados.URI.URI_B.URI_2406",
+        "peekOfCode": "def is_well_defined(expression):\n    stack = []\n    for char in expression:\n        if char in \"([{\":\n            stack.append(char)\n        else:\n            if not stack:\n                return False\n            top = stack.pop()\n            if (top == \"(\" and char != \")\") or (top == \"[\" and char != \"]\") or (top == \"{\" and char != \"}\"):",
+        "detail": "Isolados.URI.URI_B.URI_2406",
+        "documentation": {}
+    },
+    {
+        "label": "t",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2406",
+        "description": "Isolados.URI.URI_B.URI_2406",
+        "peekOfCode": "t = int(input())\nfor _ in range(t):\n    expression = input().strip()\n    result = \"S\" if is_well_defined(expression) else \"N\"\n    print(result)",
+        "detail": "Isolados.URI.URI_B.URI_2406",
+        "documentation": {}
+    },
+    {
+        "label": "find_brinquedos",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_2422",
+        "description": "Isolados.URI.URI_B.URI_2422",
+        "peekOfCode": "def find_brinquedos(casas, k):\n    left, right = 0, len(casas) - 1\n    while left < right:\n        current_sum = casas[left] + casas[right]\n        if current_sum == k:\n            return casas[left], casas[right]\n        elif current_sum < k:\n            left += 1\n        else:\n            right -= 1",
+        "detail": "Isolados.URI.URI_B.URI_2422",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2422",
+        "description": "Isolados.URI.URI_B.URI_2422",
+        "peekOfCode": "n = int(input())\ncasas = [int(input()) for _ in range(n)]\nk = int(input())\nbrinquedo1, brinquedo2 = find_brinquedos(casas, k)\nif brinquedo1 is not None and brinquedo2 is not None:\n    print(f\"{brinquedo1} {brinquedo2}\")",
+        "detail": "Isolados.URI.URI_B.URI_2422",
+        "documentation": {}
+    },
+    {
+        "label": "casas",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2422",
+        "description": "Isolados.URI.URI_B.URI_2422",
+        "peekOfCode": "casas = [int(input()) for _ in range(n)]\nk = int(input())\nbrinquedo1, brinquedo2 = find_brinquedos(casas, k)\nif brinquedo1 is not None and brinquedo2 is not None:\n    print(f\"{brinquedo1} {brinquedo2}\")",
+        "detail": "Isolados.URI.URI_B.URI_2422",
+        "documentation": {}
+    },
+    {
+        "label": "k",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2422",
+        "description": "Isolados.URI.URI_B.URI_2422",
+        "peekOfCode": "k = int(input())\nbrinquedo1, brinquedo2 = find_brinquedos(casas, k)\nif brinquedo1 is not None and brinquedo2 is not None:\n    print(f\"{brinquedo1} {brinquedo2}\")",
+        "detail": "Isolados.URI.URI_B.URI_2422",
+        "documentation": {}
+    },
+    {
+        "label": "push",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_2929",
+        "description": "Isolados.URI.URI_B.URI_2929",
+        "peekOfCode": "def push(args):\n    item = int(args[0])\n    stack.append(item)\n    if not min_stack or item <= min_stack[-1]:\n        min_stack.append(item)\ndef pop(args):\n    if stack:\n        popped_item = stack.pop()\n        if popped_item == min_stack[-1]:\n            min_stack.pop()",
+        "detail": "Isolados.URI.URI_B.URI_2929",
+        "documentation": {}
+    },
+    {
+        "label": "pop",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_2929",
+        "description": "Isolados.URI.URI_B.URI_2929",
+        "peekOfCode": "def pop(args):\n    if stack:\n        popped_item = stack.pop()\n        if popped_item == min_stack[-1]:\n            min_stack.pop()\ndef get_min(args):\n    if min_stack:\n        output.append(str(min_stack[-1]))\n    else:\n        output.append(\"EMPTY\")",
+        "detail": "Isolados.URI.URI_B.URI_2929",
+        "documentation": {}
+    },
+    {
+        "label": "get_min",
+        "kind": 2,
+        "importPath": "Isolados.URI.URI_B.URI_2929",
+        "description": "Isolados.URI.URI_B.URI_2929",
+        "peekOfCode": "def get_min(args):\n    if min_stack:\n        output.append(str(min_stack[-1]))\n    else:\n        output.append(\"EMPTY\")\noperations = {\n    \"PUSH\": push,\n    \"POP\": pop,\n    \"MIN\": get_min,\n}",
+        "detail": "Isolados.URI.URI_B.URI_2929",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2929",
+        "description": "Isolados.URI.URI_B.URI_2929",
+        "peekOfCode": "n = int(input())\nstack = deque()\nmin_stack = deque()\noutput = []\ndef push(args):\n    item = int(args[0])\n    stack.append(item)\n    if not min_stack or item <= min_stack[-1]:\n        min_stack.append(item)\ndef pop(args):",
+        "detail": "Isolados.URI.URI_B.URI_2929",
+        "documentation": {}
+    },
+    {
+        "label": "stack",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2929",
+        "description": "Isolados.URI.URI_B.URI_2929",
+        "peekOfCode": "stack = deque()\nmin_stack = deque()\noutput = []\ndef push(args):\n    item = int(args[0])\n    stack.append(item)\n    if not min_stack or item <= min_stack[-1]:\n        min_stack.append(item)\ndef pop(args):\n    if stack:",
+        "detail": "Isolados.URI.URI_B.URI_2929",
+        "documentation": {}
+    },
+    {
+        "label": "min_stack",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2929",
+        "description": "Isolados.URI.URI_B.URI_2929",
+        "peekOfCode": "min_stack = deque()\noutput = []\ndef push(args):\n    item = int(args[0])\n    stack.append(item)\n    if not min_stack or item <= min_stack[-1]:\n        min_stack.append(item)\ndef pop(args):\n    if stack:\n        popped_item = stack.pop()",
+        "detail": "Isolados.URI.URI_B.URI_2929",
+        "documentation": {}
+    },
+    {
+        "label": "output",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2929",
+        "description": "Isolados.URI.URI_B.URI_2929",
+        "peekOfCode": "output = []\ndef push(args):\n    item = int(args[0])\n    stack.append(item)\n    if not min_stack or item <= min_stack[-1]:\n        min_stack.append(item)\ndef pop(args):\n    if stack:\n        popped_item = stack.pop()\n        if popped_item == min_stack[-1]:",
+        "detail": "Isolados.URI.URI_B.URI_2929",
+        "documentation": {}
+    },
+    {
+        "label": "operations",
+        "kind": 5,
+        "importPath": "Isolados.URI.URI_B.URI_2929",
+        "description": "Isolados.URI.URI_B.URI_2929",
+        "peekOfCode": "operations = {\n    \"PUSH\": push,\n    \"POP\": pop,\n    \"MIN\": get_min,\n}\nfor _ in range(n):\n    operation, *args = input().split()\n    operations[operation](args)\nprint(\"\\n\".join(output))",
+        "detail": "Isolados.URI.URI_B.URI_2929",
         "documentation": {}
     },
     {
