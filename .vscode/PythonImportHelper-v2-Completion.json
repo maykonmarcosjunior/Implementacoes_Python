@@ -143,6 +143,14 @@
         "documentation": {}
     },
     {
+        "label": "euclides_extendido",
+        "importPath": "Isolados.Euclides",
+        "description": "Isolados.Euclides",
+        "isExtraImport": true,
+        "detail": "Isolados.Euclides",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
@@ -2478,25 +2486,43 @@
         "kind": 2,
         "importPath": "Isolados.Euclides",
         "description": "Isolados.Euclides",
-        "peekOfCode": "def fibonacci(n):\n    raiz_de_5 = 5**(0.5)\n    u = 1/raiz_de_5\n    x1 = (1 + raiz_de_5)/2\n    x2 = (1 - raiz_de_5)/2\n    x1 = x1**n\n    x2 = x2**n\n    v = (x1 - x2)//raiz_de_5\n    return v\nprint(fibonacci(2))",
+        "peekOfCode": "def fibonacci(n):\n    raiz_de_5 = 5**(0.5)\n    x1 = (1 + raiz_de_5)/2\n    x2 = (1 - raiz_de_5)/2\n    v = x1**n - x2**n\n    v = v//raiz_de_5\n    return v\ndef mdc(a, b):\n    while b:\n        a, b = b, a % b",
         "detail": "Isolados.Euclides",
         "documentation": {}
     },
     {
-        "label": "euclides",
+        "label": "mdc",
         "kind": 2,
         "importPath": "Isolados.Euclides",
         "description": "Isolados.Euclides",
-        "peekOfCode": "def euclides(a, b):\n    while b != 0:\n        a, b = b, a%b\n    return a\ndef euclides_estendido(a, b):\n    if b == 0:\n        return a, 0, 1\n    else:\n        mdc, x, y = euclides_estendido(b, a%b)\n        return mdc, y-(a//b)*x, x",
+        "peekOfCode": "def mdc(a, b):\n    while b:\n        a, b = b, a % b\n    return a\ndef mmc(a, b):\n    final_a, final_b = a, b\n    while b:\n        a, b = b, a % b\n    return (final_a*final_b) // a\ndef euclides_extendido(a, b):",
         "detail": "Isolados.Euclides",
         "documentation": {}
     },
     {
-        "label": "euclides_estendido",
+        "label": "mmc",
         "kind": 2,
         "importPath": "Isolados.Euclides",
         "description": "Isolados.Euclides",
-        "peekOfCode": "def euclides_estendido(a, b):\n    if b == 0:\n        return a, 0, 1\n    else:\n        mdc, x, y = euclides_estendido(b, a%b)\n        return mdc, y-(a//b)*x, x",
+        "peekOfCode": "def mmc(a, b):\n    final_a, final_b = a, b\n    while b:\n        a, b = b, a % b\n    return (final_a*final_b) // a\ndef euclides_extendido(a, b):\n    x0, x1, y0, y1 = 1, 0, 0, 1\n    while b != 0:\n        q, a, b = (a // b), b, (a % b)\n        x0, x1 = x1, (x0 - q * x1)",
+        "detail": "Isolados.Euclides",
+        "documentation": {}
+    },
+    {
+        "label": "euclides_extendido",
+        "kind": 2,
+        "importPath": "Isolados.Euclides",
+        "description": "Isolados.Euclides",
+        "peekOfCode": "def euclides_extendido(a, b):\n    x0, x1, y0, y1 = 1, 0, 0, 1\n    while b != 0:\n        q, a, b = (a // b), b, (a % b)\n        x0, x1 = x1, (x0 - q * x1)\n        y0, y1 = y1, (y0 - q * y1)\n    return a, x0, y0\ndef euclides_extendido_rec(a, b):\n    if b == 0:\n        return a, 0, 1",
+        "detail": "Isolados.Euclides",
+        "documentation": {}
+    },
+    {
+        "label": "euclides_extendido_rec",
+        "kind": 2,
+        "importPath": "Isolados.Euclides",
+        "description": "Isolados.Euclides",
+        "peekOfCode": "def euclides_extendido_rec(a, b):\n    if b == 0:\n        return a, 0, 1\n    else:\n        mdc, x, y = euclides_extendido(b, a % b)\n        return mdc, y-(a//b)*x, x",
         "detail": "Isolados.Euclides",
         "documentation": {}
     },
