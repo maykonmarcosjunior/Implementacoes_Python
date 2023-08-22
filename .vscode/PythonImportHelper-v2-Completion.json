@@ -126,6 +126,14 @@
         "documentation": {}
     },
     {
+        "label": "saida",
+        "importPath": "Isolados.URI.URI_A.URI_1018",
+        "description": "Isolados.URI.URI_A.URI_1018",
+        "isExtraImport": true,
+        "detail": "Isolados.URI.URI_A.URI_1018",
+        "documentation": {}
+    },
+    {
         "label": "bisect",
         "kind": 6,
         "isExtraImport": true,
@@ -2072,7 +2080,7 @@
         "kind": 5,
         "importPath": "Isolados.URI.URI_A.URI_2392",
         "description": "Isolados.URI.URI_A.URI_2392",
-        "peekOfCode": "saida = [0]*(Npedras + 1)\nfor i in range(Nsapos):\n    pedraI, pulo = [int(i) for i in input().split()]\n    saida[pedraI] = 1\n    for j in range(pedraI, Npedras+1, pulo):\n        saida[j] = 1\n    for j in range(pedraI, 0, -pulo):\n        saida[j] = 1\nfor i in range(1, Npedras+1):\n    print(saida[i])",
+        "peekOfCode": "saida = [\"\"]*(Npedras + 1)\nfor i in range(Nsapos):\n    pedraI, pulo = [int(i) for i in input().split()]\n    saida[pedraI] = \"1\\n\"\n    for j in range(pedraI, Npedras+1, pulo):\n        saida[j] = \"1\\n\"\n    for j in range(pedraI, 0, -pulo):\n        saida[j] = \"1\\n\"\nprint(\"\".join(saida), end='')",
         "detail": "Isolados.URI.URI_A.URI_2392",
         "documentation": {}
     },
@@ -2081,7 +2089,7 @@
         "kind": 2,
         "importPath": "Isolados.URI.URI_A.URI_2423",
         "description": "Isolados.URI.URI_A.URI_2423",
-        "peekOfCode": "def min(A, B, C):\n    cond1 = int(A <= B and A <= C)\n    cond2 = int(B <= A and B <= C)\n    cond3 = int(C <= A and C <= B)\n    saida = [A, B, C]\n    indice = (3*cond1 + cond2 + 2*cond3 - cond2*cond3) % 3\n    return saida[indice]\nentr = input().split()\nA = int(entr[0])//2\nB = int(entr[1])//3",
+        "peekOfCode": "def min(A, B, C):\n    cond1 = int(A <= B and A <= C)\n    cond2 = int(B <= A and B <= C)\n    cond3 = int(C <= A and C <= B)\n    saida = [A, B, C]\n    indice = (3*cond1 + cond2 + 2*cond3 - (cond2 and cond3)) % 3\n    return saida[indice]\nentr = input().split()\nA = int(entr[0])//2\nB = int(entr[1])//3",
         "detail": "Isolados.URI.URI_A.URI_2423",
         "documentation": {}
     },
