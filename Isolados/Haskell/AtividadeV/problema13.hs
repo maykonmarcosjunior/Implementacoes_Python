@@ -9,6 +9,12 @@ nenhuma fun¸c˜ao pronta to Haskell para esta tarefa.
 -}
 
 
+readlist :: [String] -> [Int]
+readlist [] = []
+readlist (x:xs) = read x : readlist xs
+
 main :: IO ()
 main = do
-
+    input <- getLine
+    let lista = readlist (words input)
+    print ( lista)

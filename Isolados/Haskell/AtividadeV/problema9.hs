@@ -5,7 +5,16 @@ recebida como parˆametro sobre cada elemento da lista e retornar a lista result
 filter para esta tarefa.
 -}
 
+mapear :: (t -> y) -> [t] -> [y]
+mapear _ [] = [] 
+mapear func (a:b) = func a : (mapear func b)
+
+readlist :: [String] -> [Int]
+readlist [] = []
+readlist (x:xs) = read x : readlist xs
 
 main :: IO ()
 main = do
-
+    input <- getLine
+    let lista = readlist (words input)
+    print (mapear (* 2) lista)

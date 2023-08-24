@@ -6,6 +6,12 @@ contr´ario n˜ao. Para esta tarefa, utilize o conceito de list comprehension.
 -}
 
 
+readlist :: [String] -> [Int]
+readlist [] = []
+readlist (x:xs) = read x : readlist xs
+
 main :: IO ()
 main = do
-
+    input <- getLine
+    let lista = readlist (words input)
+    print ( lista)
