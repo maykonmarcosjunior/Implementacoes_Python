@@ -5,6 +5,8 @@ elemento da lista e caso o retorno da fun¸c˜ao for verdadeiro, ent˜ao o eleme
 contr´ario n˜ao. Para esta tarefa, utilize o conceito de list comprehension.
 -}
 
+filtrar :: (t -> Bool) -> [t] -> [t]
+filtrar func lista = [x | x <- lista, (func x)]
 
 readlist :: [String] -> [Int]
 readlist [] = []
@@ -14,4 +16,4 @@ main :: IO ()
 main = do
     input <- getLine
     let lista = readlist (words input)
-    print ( lista)
+    print (filtrar (> 2) lista)

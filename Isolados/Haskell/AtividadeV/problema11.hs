@@ -3,6 +3,9 @@ Crie uma fun¸c˜ao com assinatura primeiros :: Int -> [t] -> [t], a qual recebe
 informados no primeiro parˆametro. N˜ao utilize nenhuma fun¸c˜ao pronta to Haskell para esta tarefa.
 -}
 
+primeiros :: Int -> [t] -> [t]
+primeiros 0 _ = []
+primeiros n (a:b) = a : (primeiros (n-1) b)
 
 readlist :: [String] -> [Int]
 readlist [] = []
@@ -12,4 +15,4 @@ main :: IO ()
 main = do
     input <- getLine
     let lista = readlist (words input)
-    print ( lista)
+    print (primeiros 2 lista)

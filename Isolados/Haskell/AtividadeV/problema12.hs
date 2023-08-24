@@ -5,6 +5,9 @@ como parˆametro. Por exemplo, a chamada (apagar 3 [1,2,3,4,5]) deve retornar [4
 nenhuma fun¸c˜ao pronta to Haskell para esta tarefa.
 -}
 
+apagar :: Int -> [t] -> [t]
+apagar 0 lista = lista
+apagar n (a:b) = (apagar (n-1) b)
 
 readlist :: [String] -> [Int]
 readlist [] = []
@@ -14,4 +17,4 @@ main :: IO ()
 main = do
     input <- getLine
     let lista = readlist (words input)
-    print ( lista)
+    print (apagar 2 lista)

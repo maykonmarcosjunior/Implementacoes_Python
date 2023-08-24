@@ -8,6 +8,13 @@ deve retornar [1,2,3,4,5], visto que ao testar o elemento 1, a fun¸c˜ao par re
 nenhuma fun¸c˜ao pronta to Haskell para esta tarefa.
 -}
 
+apagarEnquanto :: (t -> Bool) -> [t] -> [t]
+apagarEnquanto _ [] = []
+apagarEnquanto func (a:b) = 
+    if (func a) then
+        a : (apagarEnquanto func b)
+    else
+        []
 
 readlist :: [String] -> [Int]
 readlist [] = []
@@ -17,4 +24,4 @@ main :: IO ()
 main = do
     input <- getLine
     let lista = readlist (words input)
-    print ( lista)
+    print (apagarEnquanto (< 4) lista)
