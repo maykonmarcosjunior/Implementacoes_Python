@@ -1,6 +1,3 @@
-from Isolados.Euclides import euclides_extendido
-
-
 def fibonacci(n):
     raiz_de_5 = 5**(0.5)
     x1 = (1 + raiz_de_5)/2
@@ -25,7 +22,7 @@ def mmc(a, b):
 
 def euclides_extendido(a, b):
     x0, x1, y0, y1 = 1, 0, 0, 1
-    while b != 0:
+    while b:
         q, a, b = (a // b), b, (a % b)
         x0, x1 = x1, (x0 - q * x1)
         y0, y1 = y1, (y0 - q * y1)
